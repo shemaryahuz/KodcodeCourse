@@ -35,17 +35,64 @@ namespace SeriesAnalyzer
             }
             return true;
         }
-        static void Display(string[] series)
+        static void DisplaySeries(string[] series)
         {
+            foreach (string num in series)
+            {
+                Console.Write($"{num} ");
+            }
+        }
+        static void DisplayIntSeries(int[] series)
+        {
+            foreach (int num in series)
+            {
+                Console.Write($"{num} ");
+            }
+        }
 
+        static int[] ConvertToInts(string[] series)
+        {
+            int[] ints = new int[series.Length];
+            for (int i = 0; i < series.Length; i++)
+            {
+                ints[i] = Convert.ToInt32(series[i]);
+            }
+            return ints;
         }
         static string[] Reverse(string[] series)
         {
-            return series;
+            string[] reversed = new string[series.Length];
+            for (int i = series.Length - 1; i >= 0; i--)
+            {
+                reversed[series.Length - i - 1] = series[i];
+            }
+            return reversed;
         }
-        static string[] Sort(string[] series)
+        static int[] Sort(string[] series)
         {
-            return series;
+            int[] sorted = ConvertToInts(series);
+            bool done;
+            int temp;
+            for (int i = 0; i < sorted.Length; i++)
+            {
+                done = true;
+                for (int j = 0; j < sorted.Length - i - 1; j++)
+                {
+                    if (sorted[j] > sorted[j + 1])
+                    {
+                        temp = sorted[j];
+                        sorted[j] = sorted[j + 1];
+                        sorted[j + 1] = temp;
+                        done = false;
+                    }
+                }
+                if (done)
+                {
+                    break;
+                }
+
+            }
+            return sorted;
         }
         static string Max(string[] series)
         {
@@ -104,7 +151,6 @@ namespace SeriesAnalyzer
         }
         static void Main(string[] args)
         {
-            DisplayMenu();
         }
     }
 }
