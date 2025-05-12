@@ -60,9 +60,31 @@ namespace SeriesAnalyzer
             }
             return reversed;
         }
-        static string[] Sort(string[] series)
+        static int[] Sort(string[] series)
         {
-            return series;
+            int[] sorted = ConvertToInts(series);
+            bool done;
+            int temp;
+            for (int i = 0; i < sorted.Length; i++)
+            {
+                done = true;
+                for (int j = 0; j < sorted.Length - i - 1; j++)
+                {
+                    if (sorted[j] > sorted[j + 1])
+                    {
+                        temp = sorted[j];
+                        sorted[j] = sorted[j + 1];
+                        sorted[j + 1] = temp;
+                        done = false;
+                    }
+                }
+                if (done)
+                {
+                    break;
+                }
+
+            }
+            return sorted;
         }
         static string Max(string[] series)
         {
