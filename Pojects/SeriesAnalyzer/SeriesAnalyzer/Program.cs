@@ -35,13 +35,30 @@ namespace SeriesAnalyzer
             }
             return true;
         }
-        static void Display(string[] series)
+        static void DisplaySeries(string[] series)
         {
-
+            foreach (string num in series)
+            {
+                Console.Write($"{num} ");
+            }
+        }
+        static int[] ConvertToInts(string[] series)
+        {
+            int[] ints = new int[series.Length];
+            for (int i = 0; i < series.Length; i++)
+            {
+                ints[i] = Convert.ToInt32(series[i]);
+            }
+            return ints;
         }
         static string[] Reverse(string[] series)
         {
-            return series;
+            string[] reversed = new string[series.Length];
+            for (int i = series.Length - 1; i >= 0; i--)
+            {
+                reversed[series.Length - i - 1] = series[i];
+            }
+            return reversed;
         }
         static string[] Sort(string[] series)
         {
@@ -104,7 +121,6 @@ namespace SeriesAnalyzer
         }
         static void Main(string[] args)
         {
-            DisplayMenu();
         }
     }
 }
