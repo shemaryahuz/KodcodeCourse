@@ -42,6 +42,14 @@ namespace SeriesAnalyzer
                 Console.Write($"{num} ");
             }
         }
+        static void DisplayIntSeries(int[] series)
+        {
+            foreach (int num in series)
+            {
+                Console.Write($"{num} ");
+            }
+        }
+
         static int[] ConvertToInts(string[] series)
         {
             int[] ints = new int[series.Length];
