@@ -1,0 +1,7 @@
+C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\bin\Debug\SeriesAnalyzer.exe.config
+C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\bin\Debug\SeriesAnalyzer.exe
+C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\bin\Debug\SeriesAnalyzer.pdb
+C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\obj\Debug\SeriesAnalyzer.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\obj\Debug\SeriesAnalyzer.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\obj\Debug\SeriesAnalyzer.exe
+C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\obj\Debug\SeriesAnalyzer.pdb
