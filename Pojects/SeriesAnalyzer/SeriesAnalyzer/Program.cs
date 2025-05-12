@@ -11,12 +11,28 @@ namespace SeriesAnalyzer
 {
     internal class Program
     {
-        static void InputSeries()
+        static string[] GetSeries()
         {
-
+            Console.WriteLine("Please enter series of numbers (at least 3 positive numbers saperated by space):");
+            string[] series = Console.ReadLine().Split(' ');
+            return series;
         }
         static bool Validate(string[] series)
         {
+            if (series.Length < 3)
+            {
+                return false;
+            }
+            foreach (string str in series)
+            {
+                foreach (char chr in str)
+                {
+                    if (!char.IsDigit(chr))
+                    {
+                        return false;
+                    }
+                }
+            }
             return true;
         }
         static void Display(string[] series)

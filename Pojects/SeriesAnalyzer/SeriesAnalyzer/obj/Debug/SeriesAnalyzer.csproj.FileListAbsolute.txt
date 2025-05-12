@@ -5,3 +5,7 @@ C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\obj\D
 C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\obj\Debug\SeriesAnalyzer.csproj.CoreCompileInputs.cache
 C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\obj\Debug\SeriesAnalyzer.exe
 C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\obj\Debug\SeriesAnalyzer.pdb
+<<<<<<< HEAD
+=======
+C:\Users\User\OneDrive\KodCodeCourse\Pojects\SeriesAnalyzer\SeriesAnalyzer\obj\Debug\SeriesAnalyzer.exe.config
+>>>>>>> 7d87c34c6a86c099dbe0330bd479eb9dffdc20e8
