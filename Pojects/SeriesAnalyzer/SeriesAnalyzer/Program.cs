@@ -96,7 +96,16 @@ namespace SeriesAnalyzer
         }
         static string Max(string[] series)
         {
-            return series[0];
+            int[] ints = ConvertToInts(series);
+            int max = ints[0];
+            for (int i = 1; i < ints.Length; i++)
+            {
+                if (ints[i] > max)
+                {
+                    max = ints[i];
+                }
+            }
+            return Convert.ToString(max);
         }
         static string Min(string[] series)
         {
