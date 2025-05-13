@@ -126,10 +126,6 @@ namespace SeriesAnalyzer
             double average = Sum(series) / Convert.ToDouble(series.Length);
             return average;
         }
-        static int Count(string[] series)
-        {
-            return 0;
-        }
         static string DisplayMenu()
         {
             Console.WriteLine(
