@@ -158,6 +158,7 @@ namespace SeriesAnalyzer
             {
                 case "a":
                     DisplayChoice(choice);
+                    Console.WriteLine("Input a Series: ");
                     return true;
                 case "b":
                     DisplayChoice(choice);
@@ -222,8 +223,17 @@ namespace SeriesAnalyzer
                     args = GetSeries();
                 }
                 int[] currentSeries = ConvertToInts(args);
+                bool activated = false;
                 choice = DisplayMenu(currentSeries);
-                Console.WriteLine(ActivateChoice(choice, currentSeries));
+                ActivateChoice(choice, currentSeries);
+                while (!activated && choice != "j")
+                {
+                    Console.WriteLine("Invalid input!\n");
+                    Console.WriteLine("Please enter (a, b, etc.)\n");
+                    choice = DisplayMenu(currentSeries);
+                    ActivateChoice(choice, currentSeries);
+                }
+
             }
         }
     }
