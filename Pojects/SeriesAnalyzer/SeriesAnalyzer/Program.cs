@@ -13,7 +13,7 @@ namespace SeriesAnalyzer
     {
         static string[] GetSeries()
         {
-            Console.WriteLine("Please enter series of numbers (at least 3 positive numbers saperated by space):");
+            Console.WriteLine("Please enter series of numbers (at least 3 positive numbers saperated by space):\n");
             string[] series = Console.ReadLine().Split(' ');
             return series;
         }
@@ -126,20 +126,22 @@ namespace SeriesAnalyzer
             double average = Sum(series) / Convert.ToDouble(series.Length);
             return average;
         }
-        static string DisplayMenu()
+        static string DisplayMenu(int[] series)
         {
+            Console.Write($"Current Series: ");
+            DisplaySeries(series);
             Console.WriteLine(
-                "Menu: " +
-                "a.Input a Series. (Replace the current series)\n" +
-                "b.Display the series in the order it was entered.\n" +
-                "c.Display the series in the reversed order it was entered.\n" +
-                "d.Display the series in sorted order(from low to high).\n" +
-                "e.Display the Max value of the series.\n" +
-                "f.Display the Min value of the series.\n" +
-                "g.Display the Average of the series.\n" +
-                "h.Display the Number of elements in the series.\n" +
-                "i.Display the Sum of the series.\n" +
-                "j.Exit.\n" +
+                "Menu:\n\n" +
+                "a.Input a Series. (Replace the current series)\n\n" +
+                "b.Display the series in the order it was entered.\n\n" +
+                "c.Display the series in the reversed order it was entered.\n\n" +
+                "d.Display the series in sorted order(from low to high).\n\n" +
+                "e.Display the Max value of the series.\n\n" +
+                "f.Display the Min value of the series.\n\n" +
+                "g.Display the Average of the series.\n\n" +
+                "h.Display the Number of elements in the series.\n\n" +
+                "i.Display the Sum of the series.\n\n" +
+                "j.Exit.\n\n" +
                 "Please enter your choice (a, b, etc.):"
                 );
             string choice = Console.ReadLine();
@@ -163,6 +165,7 @@ namespace SeriesAnalyzer
         }
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to The Series Analyzer!\n\n");
             if (args.Length == 0)
             {
                 args = GetSeries();
@@ -173,6 +176,11 @@ namespace SeriesAnalyzer
                 args = GetSeries();
             }
             int[] currentSeries = ConvertToInts(args);
+            string choice = DisplayMenu(currentSeries);
+            while (choice != "j")
+            {
+
+            }
         }
     }
 }
