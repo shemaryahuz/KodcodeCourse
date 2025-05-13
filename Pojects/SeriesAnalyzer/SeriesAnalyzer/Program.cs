@@ -191,6 +191,7 @@ namespace SeriesAnalyzer
                     return true;
                 case "h":
                     DisplayChoice(choice);
+                    Console.WriteLine($"Number of Elements: {series.Length}");
                     return true;
                 case "i":
                     DisplayChoice(choice);
@@ -199,6 +200,7 @@ namespace SeriesAnalyzer
                     return true;
                 case "j":
                     DisplayChoice(choice);
+                    Console.WriteLine("Exit.");
                     return true;
                 default:
                     return false;
