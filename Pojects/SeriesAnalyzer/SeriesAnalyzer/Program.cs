@@ -131,9 +131,10 @@ namespace SeriesAnalyzer
             }
             return sum;
         }
-        static string Average(string[] series)
+        static double Average(int[] series)
         {
-            return series[0];
+            double average = Sum(series) / Convert.ToDouble(series.Length);
+            return average;
         }
         static int Count(string[] series)
         {
@@ -176,6 +177,8 @@ namespace SeriesAnalyzer
         }
         static void Main(string[] args)
         {
+            int[] nums = { 1, 2, 3, 4 };
+            Console.WriteLine(Average(nums));
         }
     }
 }
