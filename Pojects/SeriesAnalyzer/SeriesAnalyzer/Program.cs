@@ -176,9 +176,13 @@ namespace SeriesAnalyzer
                     return true;
                 case "e":
                     DisplayChoice(choice);
+                    Console.Write("Max Value: ");
+                    Console.WriteLine($"{Max(series)}\n");
                     return true;
                 case "f":
                     DisplayChoice(choice);
+                    Console.Write("Min Value: ");
+                    Console.WriteLine($"{Min(series)}\n");
                     return true;
                 case "g":
                     DisplayChoice(choice);
