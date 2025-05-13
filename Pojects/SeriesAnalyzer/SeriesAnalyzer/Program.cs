@@ -62,9 +62,9 @@ namespace SeriesAnalyzer
             }
             return reversed;
         }
-        static int[] Sort(string[] series)
+        static int[] Sort(int[] series)
         {
-            int[] sorted = ConvertToInts(series);
+            int[] sorted = series.ToArray();
             bool done;
             int temp;
             for (int i = 0; i < sorted.Length; i++)
@@ -169,8 +169,8 @@ namespace SeriesAnalyzer
         }
         static void Main(string[] args)
         {
-            int[] nums = { 1, 2, 3, 4 };
-            DisplaySeries(Reverse(nums));
+            int[] nums = { 2, 5, 7, 1, 2, 3, 4 };
+            DisplaySeries(Sort(nums));
         }
     }
 }
