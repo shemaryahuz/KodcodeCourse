@@ -35,14 +35,6 @@ namespace SeriesAnalyzer
             }
             return true;
         }
-        static void DisplaySeries(int[] series)
-        {
-            foreach (int num in series)
-            {
-                Console.Write($"{num} ");
-            }
-            Console.WriteLine();
-        }
 
         static int[] ConvertToInts(string[] series)
         {
@@ -53,9 +45,17 @@ namespace SeriesAnalyzer
             }
             return ints;
         }
-        static string[] Reverse(string[] series)
+        static void DisplaySeries(int[] series)
         {
-            string[] reversed = new string[series.Length];
+            foreach (int num in series)
+            {
+                Console.Write($"{num} ");
+            }
+            Console.WriteLine();
+        }
+        static int[] Reverse(int[] series)
+        {
+            int[] reversed = new int[series.Length];
             for (int i = series.Length - 1; i >= 0; i--)
             {
                 reversed[series.Length - i - 1] = series[i];
@@ -170,7 +170,7 @@ namespace SeriesAnalyzer
         static void Main(string[] args)
         {
             int[] nums = { 1, 2, 3, 4 };
-            Console.WriteLine(Average(nums));
+            DisplaySeries(Reverse(nums));
         }
     }
 }
