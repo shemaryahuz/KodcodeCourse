@@ -135,7 +135,7 @@ namespace SeriesAnalyzer
                 "a.Input a Series. (Replace the current series)\n\n" +
                 "b.Display the series in the order it was entered.\n\n" +
                 "c.Display the series in the reversed order it was entered.\n\n" +
-                "d.Display the series in sorted order(from low to high).\n\n" +
+                "d.Display the series in sorted order (from low to high).\n\n" +
                 "e.Display the Max value of the series.\n\n" +
                 "f.Display the Min value of the series.\n\n" +
                 "g.Display the Average of the series.\n\n" +
@@ -158,7 +158,7 @@ namespace SeriesAnalyzer
             {
                 case "a":
                     DisplayChoice(choice);
-                    Console.WriteLine("Input a Series: ");
+                    Console.WriteLine("Input a Series:\n\n");
                     return true;
                 case "b":
                     DisplayChoice(choice);
@@ -210,28 +210,35 @@ namespace SeriesAnalyzer
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to The Series Analyzer!\n\n");
+            string[] currentSeries = args.ToArray();
+            if (currentSeries.Length == 0)
+            {
+                currentSeries = GetSeries();
+            }
             bool toExit = false;
             while (!toExit)
             {
-                if (args.Length == 0)
-                {
-                    args = GetSeries();
-                }
-                while (!Validate(args))
+                bool validated = Validate(currentSeries);
+                while (!validated)
                 {
                     Console.WriteLine("\nCurrent series is invalid!\n");
-                    args = GetSeries();
+                    currentSeries = GetSeries();
+                    validated = Validate(currentSeries);
                 }
-                int[] currentSeries = ConvertToInts(args);
+                int[] intSeries = ConvertToInts(currentSeries);
                 bool activated = false;
-                string choice = DisplayMenu(currentSeries);
-                activated = ActivateChoice(choice, currentSeries);
+                string choice = DisplayMenu(intSeries);
+                activated = ActivateChoice(choice, intSeries);
                 while (!activated)
                 {
                     Console.WriteLine("Invalid input!\n");
                     Console.WriteLine("Please enter (a, b, etc.)\n");
-                    choice = DisplayMenu(currentSeries);
-                    activated = ActivateChoice(choice, currentSeries);
+                    choice = DisplayMenu(intSeries);
+                    activated = ActivateChoice(choice, intSeries);
+                }
+                if (choice == "a")
+                {
+                    currentSeries = GetSeries();
                 }
                 if (choice == "j")
                 {
