@@ -96,7 +96,7 @@ namespace SeriesAnalyzer
             }
             return sorted;
         }
-        static string Max(string[] series)
+        static int Max(string[] series)
         {
             int[] ints = ConvertToInts(series);
             int max = ints[0];
@@ -107,9 +107,9 @@ namespace SeriesAnalyzer
                     max = ints[i];
                 }
             }
-            return Convert.ToString(max);
+            return max;
         }
-        static string Min(string[] series)
+        static int Min(string[] series)
         {
             int[] ints = ConvertToInts(series);
             int min = ints[0];
@@ -120,7 +120,7 @@ namespace SeriesAnalyzer
                     min = ints[i];
                 }
             }
-            return Convert.ToString(min);
+            return min;
         }
         static string Average(string[] series)
         {
