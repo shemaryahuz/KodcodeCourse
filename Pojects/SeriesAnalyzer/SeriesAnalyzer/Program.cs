@@ -111,7 +111,16 @@ namespace SeriesAnalyzer
         }
         static string Min(string[] series)
         {
-            return series[0];
+            int[] ints = ConvertToInts(series);
+            int min = ints[0];
+            for (int i = 1; i < ints.Length; i++)
+            {
+                if (ints[i] < min)
+                {
+                    min = ints[i];
+                }
+            }
+            return Convert.ToString(min);
         }
         static string Average(string[] series)
         {
