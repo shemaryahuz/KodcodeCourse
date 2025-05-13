@@ -186,12 +186,16 @@ namespace SeriesAnalyzer
                     return true;
                 case "g":
                     DisplayChoice(choice);
+                    Console.Write("Average of Series: ");
+                    Console.WriteLine($"{Average(series)}\n");
                     return true;
                 case "h":
                     DisplayChoice(choice);
                     return true;
                 case "i":
                     DisplayChoice(choice);
+                    Console.Write("Sum of Series: ");
+                    Console.WriteLine($"{Sum(series)}\n");
                     return true;
                 case "j":
                     DisplayChoice(choice);
