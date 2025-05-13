@@ -35,22 +35,6 @@ namespace SeriesAnalyzer
             }
             return true;
         }
-        static void DisplaySeries(string[] series)
-        {
-            foreach (string num in series)
-            {
-                Console.Write($"{num} ");
-            }
-            Console.WriteLine();
-        }
-        static void DisplayIntSeries(int[] series)
-        {
-            foreach (int num in series)
-            {
-                Console.Write($"{num} ");
-                Console.WriteLine();
-            }
-        }
 
         static int[] ConvertToInts(string[] series)
         {
@@ -61,18 +45,26 @@ namespace SeriesAnalyzer
             }
             return ints;
         }
-        static string[] Reverse(string[] series)
+        static void DisplaySeries(int[] series)
         {
-            string[] reversed = new string[series.Length];
+            foreach (int num in series)
+            {
+                Console.Write($"{num} ");
+            }
+            Console.WriteLine();
+        }
+        static int[] Reverse(int[] series)
+        {
+            int[] reversed = new int[series.Length];
             for (int i = series.Length - 1; i >= 0; i--)
             {
                 reversed[series.Length - i - 1] = series[i];
             }
             return reversed;
         }
-        static int[] Sort(string[] series)
+        static int[] Sort(int[] series)
         {
-            int[] sorted = ConvertToInts(series);
+            int[] sorted = series.ToArray();
             bool done;
             int temp;
             for (int i = 0; i < sorted.Length; i++)
@@ -96,28 +88,26 @@ namespace SeriesAnalyzer
             }
             return sorted;
         }
-        static int Max(string[] series)
+        static int Max(int[] series)
         {
-            int[] ints = ConvertToInts(series);
-            int max = ints[0];
-            for (int i = 1; i < ints.Length; i++)
+            int max = series[0];
+            for (int i = 1; i < series.Length; i++)
             {
-                if (ints[i] > max)
+                if (series[i] > max)
                 {
-                    max = ints[i];
+                    max = series[i];
                 }
             }
             return max;
         }
-        static int Min(string[] series)
+        static int Min(int[] series)
         {
-            int[] ints = ConvertToInts(series);
-            int min = ints[0];
-            for (int i = 1; i < ints.Length; i++)
+            int min = series[0];
+            for (int i = 1; i < series.Length; i++)
             {
-                if (ints[i] < min)
+                if (series[i] < min)
                 {
-                    min = ints[i];
+                    min = series[i];
                 }
             }
             return min;
@@ -135,10 +125,6 @@ namespace SeriesAnalyzer
         {
             double average = Sum(series) / Convert.ToDouble(series.Length);
             return average;
-        }
-        static int Count(string[] series)
-        {
-            return 0;
         }
         static string DisplayMenu()
         {
@@ -177,8 +163,7 @@ namespace SeriesAnalyzer
         }
         static void Main(string[] args)
         {
-            int[] nums = { 1, 2, 3, 4 };
-            Console.WriteLine(Average(nums));
+            int[] nums = { 2, 5, 7, 1, 2, 3, 4 };
         }
     }
 }
