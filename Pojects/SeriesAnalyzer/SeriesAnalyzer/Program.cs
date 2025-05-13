@@ -88,28 +88,26 @@ namespace SeriesAnalyzer
             }
             return sorted;
         }
-        static int Max(string[] series)
+        static int Max(int[] series)
         {
-            int[] ints = ConvertToInts(series);
-            int max = ints[0];
-            for (int i = 1; i < ints.Length; i++)
+            int max = series[0];
+            for (int i = 1; i < series.Length; i++)
             {
-                if (ints[i] > max)
+                if (series[i] > max)
                 {
-                    max = ints[i];
+                    max = series[i];
                 }
             }
             return max;
         }
-        static int Min(string[] series)
+        static int Min(int[] series)
         {
-            int[] ints = ConvertToInts(series);
-            int min = ints[0];
-            for (int i = 1; i < ints.Length; i++)
+            int min = series[0];
+            for (int i = 1; i < series.Length; i++)
             {
-                if (ints[i] < min)
+                if (series[i] < min)
                 {
-                    min = ints[i];
+                    min = series[i];
                 }
             }
             return min;
@@ -170,7 +168,6 @@ namespace SeriesAnalyzer
         static void Main(string[] args)
         {
             int[] nums = { 2, 5, 7, 1, 2, 3, 4 };
-            DisplaySeries(Sort(nums));
         }
     }
 }
