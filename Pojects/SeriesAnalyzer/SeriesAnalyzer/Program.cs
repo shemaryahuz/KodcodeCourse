@@ -41,12 +41,14 @@ namespace SeriesAnalyzer
             {
                 Console.Write($"{num} ");
             }
+            Console.WriteLine();
         }
         static void DisplayIntSeries(int[] series)
         {
             foreach (int num in series)
             {
                 Console.Write($"{num} ");
+                Console.WriteLine();
             }
         }
 
@@ -96,11 +98,29 @@ namespace SeriesAnalyzer
         }
         static string Max(string[] series)
         {
-            return series[0];
+            int[] ints = ConvertToInts(series);
+            int max = ints[0];
+            for (int i = 1; i < ints.Length; i++)
+            {
+                if (ints[i] > max)
+                {
+                    max = ints[i];
+                }
+            }
+            return Convert.ToString(max);
         }
         static string Min(string[] series)
         {
-            return series[0];
+            int[] ints = ConvertToInts(series);
+            int min = ints[0];
+            for (int i = 1; i < ints.Length; i++)
+            {
+                if (ints[i] < min)
+                {
+                    min = ints[i];
+                }
+            }
+            return Convert.ToString(min);
         }
         static string Average(string[] series)
         {
