@@ -151,24 +151,52 @@ namespace SeriesAnalyzer
         {
             Console.WriteLine($"You selected option '{choice}'.\n");
         }
+        static bool ActivateChoice(string choice)
+        {
+            switch (choice)
+            {
+                case "a":
+                    return true;
+                case "b":
+                    return true;
+                case "c":
+                    return true;
+                case "d":
+                    return true;
+                case "e":
+                    return true;
+                case "f":
+                    return true;;
+                case "g":
+                    return true;
+                case "h":
+                    return true;
+                case "i":
+                    return true;
+                case "j":
+                    return true;
+                default:
+                    return false;
+            }
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to The Series Analyzer!\n\n");
-            if (args.Length == 0)
-            {
-                args = GetSeries();
-            }
-            while (!Validate(args))
-            {
-                Console.WriteLine("\nCurrent series is invalid!\n");
-                args = GetSeries();
-            }
-            int[] currentSeries = ConvertToInts(args);
-            string choice = DisplayMenu(currentSeries);
+            string choice = "";
             while (choice != "j")
             {
-                DisplayChoice(choice);
+                if (args.Length == 0)
+                {
+                    args = GetSeries();
+                }
+                while (!Validate(args))
+                {
+                    Console.WriteLine("\nCurrent series is invalid!\n");
+                    args = GetSeries();
+                }
+                int[] currentSeries = ConvertToInts(args);
                 choice = DisplayMenu(currentSeries);
+                Console.WriteLine(ActivateChoice(choice));
             }
         }
     }
