@@ -161,11 +161,13 @@ namespace SeriesAnalyzer
                     return true;
                 case "b":
                     DisplayChoice(choice);
-                    Console.Write($"Current series: ");
+                    Console.Write("Current series: ");
                     DisplaySeries(series);
                     return true;
                 case "c":
                     DisplayChoice(choice);
+                    Console.Write("Reversed series: ");
+                    DisplaySeries(Reverse(series));
                     return true;
                 case "d":
                     DisplayChoice(choice);
