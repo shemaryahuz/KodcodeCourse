@@ -13,7 +13,7 @@ namespace SeriesAnalyzer
     {
         static string[] GetSeries()
         {
-            Console.WriteLine("Please enter series of numbers (at least 3 positive numbers saperated by space):");
+            Console.WriteLine("Please enter series of numbers (at least 3 positive numbers saperated by space):\n");
             string[] series = Console.ReadLine().Split(' ');
             return series;
         }
@@ -51,7 +51,7 @@ namespace SeriesAnalyzer
             {
                 Console.Write($"{num} ");
             }
-            Console.WriteLine();
+            Console.WriteLine("\n");
         }
         static int[] Reverse(int[] series)
         {
@@ -119,51 +119,112 @@ namespace SeriesAnalyzer
             {
                 sum += num;
             }
-            return sum;
+            return sum; 
         }
         static double Average(int[] series)
         {
             double average = Sum(series) / Convert.ToDouble(series.Length);
             return average;
         }
-        static string DisplayMenu()
+        static string DisplayMenu(int[] series)
         {
+            Console.Write($"\nCurrent Series: ");
+            DisplaySeries(series);
             Console.WriteLine(
-                "Menu: " +
-                "a.Input a Series. (Replace the current series)\n" +
-                "b.Display the series in the order it was entered.\n" +
-                "c.Display the series in the reversed order it was entered.\n" +
-                "d.Display the series in sorted order(from low to high).\n" +
-                "e.Display the Max value of the series.\n" +
-                "f.Display the Min value of the series.\n" +
-                "g.Display the Average of the series.\n" +
-                "h.Display the Number of elements in the series.\n" +
-                "i.Display the Sum of the series.\n" +
-                "j.Exit.\n" +
-                "Please enter your choice (a, b, etc.):"
+                "Menu:\n\n" +
+                "a.Input a Series. (Replace the current series)\n\n" +
+                "b.Display the series in the order it was entered.\n\n" +
+                "c.Display the series in the reversed order it was entered.\n\n" +
+                "d.Display the series in sorted order(from low to high).\n\n" +
+                "e.Display the Max value of the series.\n\n" +
+                "f.Display the Min value of the series.\n\n" +
+                "g.Display the Average of the series.\n\n" +
+                "h.Display the Number of elements in the series.\n\n" +
+                "i.Display the Sum of the series.\n\n" +
+                "j.Exit.\n\n" +
+                "Please enter your choice (a, b, etc.):\n"
                 );
             string choice = Console.ReadLine();
-            while (
-                choice != "a"
-                && choice != "b"
-                && choice != "c"
-                && choice != "d"
-                && choice != "e"
-                && choice != "f"
-                && choice != "g"
-                && choice != "h" 
-                && choice != "i"
-                && choice != "j"
-                )
-            {
-                Console.WriteLine("Invalid input! Please enter your choice (a, b, etc.):");
-                choice = Console.ReadLine();
-            }
+            Console.WriteLine();
             return choice;
+        }
+        static void DisplayChoice(string choice)
+        {
+            Console.Write($"You selected option '{choice}' - ");
+        }
+        static bool ActivateChoice(string choice, int[] series)
+        {
+            switch (choice)
+            {
+                case "a":
+                    DisplayChoice(choice);
+                    return true;
+                case "b":
+                    DisplayChoice(choice);
+                    Console.Write("Current Series: ");
+                    DisplaySeries(series);
+                    return true;
+                case "c":
+                    DisplayChoice(choice);
+                    Console.Write("Reversed Series: ");
+                    DisplaySeries(Reverse(series));
+                    return true;
+                case "d":
+                    DisplayChoice(choice);
+                    Console.Write("Sorted Series: ");
+                    DisplaySeries(Sort(series));
+                    return true;
+                case "e":
+                    DisplayChoice(choice);
+                    Console.Write("Max Value: ");
+                    Console.WriteLine($"{Max(series)}\n");
+                    return true;
+                case "f":
+                    DisplayChoice(choice);
+                    Console.Write("Min Value: ");
+                    Console.WriteLine($"{Min(series)}\n");
+                    return true;
+                case "g":
+                    DisplayChoice(choice);
+                    Console.Write("Average of Series: ");
+                    Console.WriteLine($"{Average(series)}\n");
+                    return true;
+                case "h":
+                    DisplayChoice(choice);
+                    Console.WriteLine($"Number of Elements: {series.Length}");
+                    return true;
+                case "i":
+                    DisplayChoice(choice);
+                    Console.Write("Sum of Series: ");
+                    Console.WriteLine($"{Sum(series)}\n");
+                    return true;
+                case "j":
+                    DisplayChoice(choice);
+                    Console.WriteLine("Exit.");
+                    return true;
+                default:
+                    return false;
+            }
         }
         static void Main(string[] args)
         {
-            int[] nums = { 2, 5, 7, 1, 2, 3, 4 };
+            Console.WriteLine("Welcome to The Series Analyzer!\n\n");
+            string choice = "";
+            while (choice != "j")
+            {
+                if (args.Length == 0)
+                {
+                    args = GetSeries();
+                }
+                while (!Validate(args))
+                {
+                    Console.WriteLine("\nCurrent series is invalid!\n");
+                    args = GetSeries();
+                }
+                int[] currentSeries = ConvertToInts(args);
+                choice = DisplayMenu(currentSeries);
+                Console.WriteLine(ActivateChoice(choice, currentSeries));
+            }
         }
     }
 }
