@@ -163,7 +163,16 @@ namespace SeriesAnalyzer
         }
         static void Main(string[] args)
         {
-            int[] nums = { 2, 5, 7, 1, 2, 3, 4 };
+            if (args.Length == 0)
+            {
+                args = GetSeries();
+            }
+            while (!Validate(args))
+            {
+                Console.WriteLine("Current series is invalid!");
+                args = GetSeries();
+            }
+            int[] currentSeries = ConvertToInts(args);
         }
     }
 }
