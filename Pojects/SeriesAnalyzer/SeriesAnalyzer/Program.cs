@@ -145,23 +145,11 @@ namespace SeriesAnalyzer
                 "Please enter your choice (a, b, etc.):\n"
                 );
             string choice = Console.ReadLine();
-            while (
-                choice != "a"
-                && choice != "b"
-                && choice != "c"
-                && choice != "d"
-                && choice != "e"
-                && choice != "f"
-                && choice != "g"
-                && choice != "h" 
-                && choice != "i"
-                && choice != "j"
-                )
-            {
-                Console.WriteLine("Invalid input! Please enter your choice (a, b, etc.):\n");
-                choice = Console.ReadLine();
-            }
             return choice;
+        }
+        static void DisplayChoice(string choice)
+        {
+            Console.WriteLine($"You selected option '{choice}'.\n");
         }
         static void Main(string[] args)
         {
@@ -179,7 +167,8 @@ namespace SeriesAnalyzer
             string choice = DisplayMenu(currentSeries);
             while (choice != "j")
             {
-
+                DisplayChoice(choice);
+                choice = DisplayMenu(currentSeries);
             }
         }
     }
