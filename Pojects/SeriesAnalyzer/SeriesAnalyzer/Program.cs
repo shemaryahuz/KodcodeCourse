@@ -145,41 +145,52 @@ namespace SeriesAnalyzer
                 "Please enter your choice (a, b, etc.):\n"
                 );
             string choice = Console.ReadLine();
+            Console.WriteLine();
             return choice;
         }
         static void DisplayChoice(string choice)
         {
-            Console.WriteLine($"You selected option '{choice}'.\n");
+            Console.Write($"You selected option '{choice}' - ");
         }
-        static bool ActivateChoice(string choice)
+        static bool ActivateChoice(string choice, int[] series)
         {
             switch (choice)
             {
                 case "a":
-                    break;
+                    DisplayChoice(choice);
+                    return true;
                 case "b":
-                    break;
+                    DisplayChoice(choice);
+                    Console.Write($"Current series: ");
+                    DisplaySeries(series);
+                    return true;
                 case "c":
-                    break;
+                    DisplayChoice(choice);
+                    return true;
                 case "d":
-                    break;
+                    DisplayChoice(choice);
+                    return true;
                 case "e":
-                    break;
+                    DisplayChoice(choice);
+                    return true;
                 case "f":
-                    break;
+                    DisplayChoice(choice);
+                    return true;
                 case "g":
-                    break;
+                    DisplayChoice(choice);
+                    return true;
                 case "h":
-                    break;
+                    DisplayChoice(choice);
+                    return true;
                 case "i":
-                    break;
+                    DisplayChoice(choice);
+                    return true;
                 case "j":
-                    break;
+                    DisplayChoice(choice);
+                    return true;
                 default:
                     return false;
             }
-            DisplayChoice(choice);
-            return true;
         }
         static void Main(string[] args)
         {
@@ -198,7 +209,7 @@ namespace SeriesAnalyzer
                 }
                 int[] currentSeries = ConvertToInts(args);
                 choice = DisplayMenu(currentSeries);
-                Console.WriteLine(ActivateChoice(choice));
+                Console.WriteLine(ActivateChoice(choice, currentSeries));
             }
         }
     }
