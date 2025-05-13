@@ -51,7 +51,7 @@ namespace SeriesAnalyzer
             {
                 Console.Write($"{num} ");
             }
-            Console.WriteLine();
+            Console.WriteLine("\n");
         }
         static int[] Reverse(int[] series)
         {
@@ -119,7 +119,7 @@ namespace SeriesAnalyzer
             {
                 sum += num;
             }
-            return sum;
+            return sum; 
         }
         static double Average(int[] series)
         {
@@ -128,7 +128,7 @@ namespace SeriesAnalyzer
         }
         static string DisplayMenu(int[] series)
         {
-            Console.Write($"Current Series: ");
+            Console.Write($"\nCurrent Series: ");
             DisplaySeries(series);
             Console.WriteLine(
                 "Menu:\n\n" +
@@ -142,7 +142,7 @@ namespace SeriesAnalyzer
                 "h.Display the Number of elements in the series.\n\n" +
                 "i.Display the Sum of the series.\n\n" +
                 "j.Exit.\n\n" +
-                "Please enter your choice (a, b, etc.):"
+                "Please enter your choice (a, b, etc.):\n"
                 );
             string choice = Console.ReadLine();
             while (
@@ -158,7 +158,7 @@ namespace SeriesAnalyzer
                 && choice != "j"
                 )
             {
-                Console.WriteLine("Invalid input! Please enter your choice (a, b, etc.):");
+                Console.WriteLine("Invalid input! Please enter your choice (a, b, etc.):\n");
                 choice = Console.ReadLine();
             }
             return choice;
@@ -172,7 +172,7 @@ namespace SeriesAnalyzer
             }
             while (!Validate(args))
             {
-                Console.WriteLine("Current series is invalid!");
+                Console.WriteLine("\nCurrent series is invalid!\n");
                 args = GetSeries();
             }
             int[] currentSeries = ConvertToInts(args);
