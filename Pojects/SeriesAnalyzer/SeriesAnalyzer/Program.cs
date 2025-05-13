@@ -156,28 +156,30 @@ namespace SeriesAnalyzer
             switch (choice)
             {
                 case "a":
-                    return true;
+                    break;
                 case "b":
-                    return true;
+                    break;
                 case "c":
-                    return true;
+                    break;
                 case "d":
-                    return true;
+                    break;
                 case "e":
-                    return true;
+                    break;
                 case "f":
-                    return true;;
+                    break;
                 case "g":
-                    return true;
+                    break;
                 case "h":
-                    return true;
+                    break;
                 case "i":
-                    return true;
+                    break;
                 case "j":
-                    return true;
+                    break;
                 default:
                     return false;
             }
+            DisplayChoice(choice);
+            return true;
         }
         static void Main(string[] args)
         {
