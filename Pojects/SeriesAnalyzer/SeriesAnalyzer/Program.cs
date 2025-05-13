@@ -150,7 +150,7 @@ namespace SeriesAnalyzer
         }
         static void DisplayChoice(string choice)
         {
-            Console.Write($"You selected option '{choice}' - ");
+            Console.WriteLine($"You selected option '{choice}':\n");
         }
         static bool ActivateChoice(string choice, int[] series)
         {
@@ -210,8 +210,8 @@ namespace SeriesAnalyzer
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to The Series Analyzer!\n\n");
-            string choice = "";
-            while (choice != "j")
+            bool toExit = false;
+            while (!toExit)
             {
                 if (args.Length == 0)
                 {
@@ -224,16 +224,19 @@ namespace SeriesAnalyzer
                 }
                 int[] currentSeries = ConvertToInts(args);
                 bool activated = false;
-                choice = DisplayMenu(currentSeries);
-                ActivateChoice(choice, currentSeries);
-                while (!activated && choice != "j")
+                string choice = DisplayMenu(currentSeries);
+                activated = ActivateChoice(choice, currentSeries);
+                while (!activated)
                 {
                     Console.WriteLine("Invalid input!\n");
                     Console.WriteLine("Please enter (a, b, etc.)\n");
                     choice = DisplayMenu(currentSeries);
-                    ActivateChoice(choice, currentSeries);
+                    activated = ActivateChoice(choice, currentSeries);
                 }
-
+                if (choice == "j")
+                {
+                    toExit = true;
+                }
             }
         }
     }
