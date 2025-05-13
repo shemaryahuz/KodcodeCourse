@@ -122,6 +122,15 @@ namespace SeriesAnalyzer
             }
             return min;
         }
+        static int Sum(int[] series)
+        {
+            int sum = 0;
+            foreach (int num in series)
+            {
+                sum += num;
+            }
+            return sum;
+        }
         static string Average(string[] series)
         {
             return series[0];
@@ -129,10 +138,6 @@ namespace SeriesAnalyzer
         static int Count(string[] series)
         {
             return 0;
-        }
-        static string Sum(string[] series)
-        {
-            return series[0];
         }
         static string DisplayMenu()
         {
