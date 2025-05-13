@@ -35,21 +35,13 @@ namespace SeriesAnalyzer
             }
             return true;
         }
-        static void DisplaySeries(string[] series)
-        {
-            foreach (string num in series)
-            {
-                Console.Write($"{num} ");
-            }
-            Console.WriteLine();
-        }
-        static void DisplayIntSeries(int[] series)
+        static void DisplaySeries(int[] series)
         {
             foreach (int num in series)
             {
                 Console.Write($"{num} ");
-                Console.WriteLine();
             }
+            Console.WriteLine();
         }
 
         static int[] ConvertToInts(string[] series)
