@@ -41,12 +41,14 @@ namespace SeriesAnalyzer
             {
                 Console.Write($"{num} ");
             }
+            Console.WriteLine();
         }
         static void DisplayIntSeries(int[] series)
         {
             foreach (int num in series)
             {
                 Console.Write($"{num} ");
+                Console.WriteLine();
             }
         }
 
