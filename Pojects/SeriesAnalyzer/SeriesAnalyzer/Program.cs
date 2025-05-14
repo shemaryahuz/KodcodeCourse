@@ -226,9 +226,8 @@ namespace SeriesAnalyzer
                     validated = Validate(currentSeries);
                 }
                 int[] intSeries = ConvertToInts(currentSeries);
-                bool activated = false;
                 string choice = DisplayMenu(intSeries);
-                activated = ActivateChoice(choice, intSeries);
+                bool activated = ActivateChoice(choice, intSeries);
                 while (!activated)
                 {
                     Console.WriteLine("Invalid input!\n");
