@@ -13,7 +13,7 @@ namespace SeriesAnalyzer
     {
         static string[] GetSeries()
         {
-            Console.WriteLine("Please enter series of rational numbers  saperated by space (at least 3 positive numbers!):\n");
+            Console.WriteLine("Please enter series of rational numbers saperated by space (at least 3 positive numbers!):\n");
             string[] series = Console.ReadLine().Split(' ');
             return series;
         }
@@ -163,7 +163,7 @@ namespace SeriesAnalyzer
             {
                 case "a":
                     DisplayChoice(choice);
-                    Console.WriteLine("Input a Series:\n\n");
+                    Console.WriteLine("Input a Series.\n\n");
                     return true;
                 case "b":
                     DisplayChoice(choice);
