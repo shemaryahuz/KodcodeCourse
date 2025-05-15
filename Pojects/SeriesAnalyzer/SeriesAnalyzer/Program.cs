@@ -159,58 +159,60 @@ namespace SeriesAnalyzer
         }
         static bool ActivateChoice(string choice, double[] series)
         {
-            switch (choice)
+            bool validated;
+            string validOptions = "abcdefghij";
+            if (validOptions.Contains(choice))
             {
-                case "a":
-                    DisplayChoice(choice);
-                    Console.WriteLine("Input a Series.\n\n");
-                    return true;
-                case "b":
-                    DisplayChoice(choice);
-                    Console.Write("Current Series: ");
-                    DisplaySeries(series);
-                    return true;
-                case "c":
-                    DisplayChoice(choice);
-                    Console.Write("Reversed Series: ");
-                    DisplaySeries(Reverse(series));
-                    return true;
-                case "d":
-                    DisplayChoice(choice);
-                    Console.Write("Sorted Series: ");
-                    DisplaySeries(Sort(series));
-                    return true;
-                case "e":
-                    DisplayChoice(choice);
-                    Console.Write("Max Value: ");
-                    Console.WriteLine($"{Max(series)}\n");
-                    return true;
-                case "f":
-                    DisplayChoice(choice);
-                    Console.Write("Min Value: ");
-                    Console.WriteLine($"{Min(series)}\n");
-                    return true;
-                case "g":
-                    DisplayChoice(choice);
-                    Console.Write("Average of Series: ");
-                    Console.WriteLine($"{Average(series)}\n");
-                    return true;
-                case "h":
-                    DisplayChoice(choice);
-                    Console.WriteLine($"Number of Elements: {series.Length}");
-                    return true;
-                case "i":
-                    DisplayChoice(choice);
-                    Console.Write("Sum of Series: ");
-                    Console.WriteLine($"{Sum(series)}\n");
-                    return true;
-                case "j":
-                    DisplayChoice(choice);
-                    Console.WriteLine("Exit.");
-                    return true;
-                default:
-                    return false;
+                validated = true;
+                Console.WriteLine($"You selected option '{choice}':\n");
             }
+            else
+            {
+                validated = false;
+            }
+                switch (choice)
+                {
+                    case "a":
+                        Console.WriteLine("Input a Series.\n\n");
+                        break;
+                    case "b":
+                        Console.Write("Current Series: ");
+                        DisplaySeries(series);
+                        break;
+                    case "c":
+                        Console.Write("Reversed Series: ");
+                        DisplaySeries(Reverse(series));
+                        break;
+                    case "d":
+                        Console.Write("Sorted Series: ");
+                        DisplaySeries(Sort(series));
+                        break;
+                    case "e":
+                        Console.Write("Max Value: ");
+                        Console.WriteLine($"{Max(series)}\n");
+                        break;
+                    case "f":
+                        Console.Write("Min Value: ");
+                        Console.WriteLine($"{Min(series)}\n");
+                        break;
+                    case "g":
+                        Console.Write("Average of Series: ");
+                        Console.WriteLine($"{Average(series)}\n");
+                        break;
+                    case "h":
+                        Console.WriteLine($"Number of Elements: {series.Length}");
+                        break;
+                    case "i":
+                        Console.Write("Sum of Series: ");
+                        Console.WriteLine($"{Sum(series)}\n");
+                        break;
+                    case "j":
+                        Console.WriteLine("Exit.");
+                        break;
+                    default:
+                        break;
+                }
+            return validated;
         }
         static void Main(string[] args)
         {
