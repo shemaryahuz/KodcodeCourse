@@ -60,7 +60,6 @@ namespace SeriesAnalyzer
         }
         static double[] Reverse(double[] series)
         {
-            // to fix
             double[] reversed = new double[series.Length];
             for (int i = series.Length - 1; i >= 0; i--)
             {
@@ -68,33 +67,32 @@ namespace SeriesAnalyzer
             }
             return reversed;
         }
-        //static int[] Sort(int[] series)
-        //{
-        //    // to fix
-        //    int[] sorted = series.ToArray();
-        //    bool done;
-        //    int temp;
-        //    for (int i = 0; i < sorted.Length; i++)
-        //    {
-        //        done = true;
-        //        for (int j = 0; j < sorted.Length - i - 1; j++)
-        //        {
-        //            if (sorted[j] > sorted[j + 1])
-        //            {
-        //                temp = sorted[j];
-        //                sorted[j] = sorted[j + 1];
-        //                sorted[j + 1] = temp;
-        //                done = false;
-        //            }
-        //        }
-        //        if (done)
-        //        {
-        //            break;
-        //        }
+        static double[] Sort(double[] series)
+        {
+            double[] sorted = series.ToArray();
+            bool done;
+            double temp;
+            for (int i = 0; i < sorted.Length; i++)
+            {
+                done = true;
+                for (int j = 0; j < sorted.Length - i - 1; j++)
+                {
+                    if (sorted[j] > sorted[j + 1])
+                    {
+                        temp = sorted[j];
+                        sorted[j] = sorted[j + 1];
+                        sorted[j + 1] = temp;
+                        done = false;
+                    }
+                }
+                if (done)
+                {
+                    break;
+                }
 
-        //    }
-        //    return sorted;
-        //}
+            }
+            return sorted;
+        }
         //static int Max(int[] series)
         //{
         //    // to fix
@@ -261,8 +259,8 @@ namespace SeriesAnalyzer
             //        toExit = true;
             //    }
             //}
-            double[] nums = { -5, -2.5, 0.5, 2 };
-            DisplaySeries(Reverse(nums));
+            double[] nums = { 7, -5, -2.5, 0.5, 2 };
+            DisplaySeries(Sort(nums));
         }
     }
 }
