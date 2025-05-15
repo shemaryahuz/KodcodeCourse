@@ -50,9 +50,9 @@ namespace SeriesAnalyzer
             }
             return doubles;
         }
-        static void DisplaySeries(int[] series)
+        static void DisplaySeries(double[] series)
         {
-            foreach (int num in series)
+            foreach (double num in series)
             {
                 Console.Write($"{num} ");
             }
