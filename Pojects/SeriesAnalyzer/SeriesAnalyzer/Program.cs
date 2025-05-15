@@ -13,25 +13,30 @@ namespace SeriesAnalyzer
     {
         static string[] GetSeries()
         {
-            Console.WriteLine("Please enter series of numbers (at least 3 positive numbers saperated by space):\n");
+            Console.WriteLine("Please enter series of rational numbers  saperated by space (at least 3 positive numbers!):\n");
             string[] series = Console.ReadLine().Split(' ');
             return series;
         }
         static bool Validate(string[] series)
         {
-            if (series.Length < 3)
-            {
-                return false;
-            }
+            int positiveNumbers = 0;
+            double indicator;
+            bool isDouble;
             foreach (string str in series)
             {
-                foreach (char chr in str)
+                isDouble = double.TryParse(str, out indicator);
+                if (!isDouble)
                 {
-                    if (!char.IsDigit(chr))
-                    {
-                        return false;
-                    }
+                    return false;
                 }
+                if (indicator > 0)
+                {
+                    positiveNumbers++;
+                }
+            }
+            if (positiveNumbers < 3)
+            {
+                return false;
             }
             return true;
         }
