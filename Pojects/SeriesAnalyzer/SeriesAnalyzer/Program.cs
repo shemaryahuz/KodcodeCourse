@@ -131,33 +131,32 @@ namespace SeriesAnalyzer
             double average = Sum(series) / Convert.ToDouble(series.Length);
             return average;
         }
-        //static string DisplayMenu(int[] series)
-        //{
-        //    // to fix
-        //    Console.Write($"\nCurrent Series: ");
-        //    DisplaySeries(series);
-        //    Console.WriteLine(
-        //        "Menu:\n\n" +
-        //        "a.Input a Series. (Replace the current series)\n\n" +
-        //        "b.Display the series in the order it was entered.\n\n" +
-        //        "c.Display the series in the reversed order it was entered.\n\n" +
-        //        "d.Display the series in sorted order (from low to high).\n\n" +
-        //        "e.Display the Max value of the series.\n\n" +
-        //        "f.Display the Min value of the series.\n\n" +
-        //        "g.Display the Average of the series.\n\n" +
-        //        "h.Display the Number of elements in the series.\n\n" +
-        //        "i.Display the Sum of the series.\n\n" +
-        //        "j.Exit.\n\n" +
-        //        "Please enter your choice (a, b, etc.):\n"
-        //        );
-        //    string choice = Console.ReadLine();
-        //    Console.WriteLine();
-        //    return choice;
-        //}
-        //static void DisplayChoice(string choice)
-        //{
-        //    Console.WriteLine($"You selected option '{choice}':\n");
-        //}
+        static string DisplayMenu(double[] series)
+        {
+            Console.Write($"\nCurrent Series: ");
+            DisplaySeries(series);
+            Console.WriteLine(
+                "Menu:\n\n" +
+                "a.Input a Series. (Replace the current series)\n\n" +
+                "b.Display the series in the order it was entered.\n\n" +
+                "c.Display the series in the reversed order it was entered.\n\n" +
+                "d.Display the series in sorted order (from low to high).\n\n" +
+                "e.Display the Max value of the series.\n\n" +
+                "f.Display the Min value of the series.\n\n" +
+                "g.Display the Average of the series.\n\n" +
+                "h.Display the Number of elements in the series.\n\n" +
+                "i.Display the Sum of the series.\n\n" +
+                "j.Exit.\n\n" +
+                "Please enter your choice (a, b, etc.):\n"
+                );
+            string choice = Console.ReadLine();
+            Console.WriteLine();
+            return choice;
+        }
+        static void DisplayChoice(string choice)
+        {
+            Console.WriteLine($"You selected option '{choice}':\n");
+        }
         //static bool ActivateChoice(string choice, int[] series)
         //{
         //    // to fix
