@@ -13,60 +13,65 @@ namespace SeriesAnalyzer
     {
         static string[] GetSeries()
         {
-            Console.WriteLine("Please enter series of numbers (at least 3 positive numbers saperated by space):\n");
+            Console.WriteLine("Please enter series of rational numbers saperated by space (at least 3 positive numbers!):\n");
             string[] series = Console.ReadLine().Split(' ');
             return series;
         }
         static bool Validate(string[] series)
         {
-            if (series.Length < 3)
-            {
-                return false;
-            }
+            int positiveNumbers = 0;
+            double indicator;
+            bool isDouble;
             foreach (string str in series)
             {
-                foreach (char chr in str)
+                isDouble = double.TryParse(str, out indicator);
+                if (!isDouble)
                 {
-                    if (!char.IsDigit(chr))
-                    {
-                        return false;
-                    }
+                    return false;
                 }
+                if (indicator > 0)
+                {
+                    positiveNumbers++;
+                }
+            }
+            if (positiveNumbers < 3)
+            {
+                return false;
             }
             return true;
         }
 
-        static int[] ConvertToInts(string[] series)
+        static double[] ConvertToDoubles(string[] series)
         {
-            int[] ints = new int[series.Length];
+            double[] doubles = new double[series.Length];
             for (int i = 0; i < series.Length; i++)
             {
-                ints[i] = Convert.ToInt32(series[i]);
+                doubles[i] = Convert.ToDouble(series[i]);
             }
-            return ints;
+            return doubles;
         }
-        static void DisplaySeries(int[] series)
+        static void DisplaySeries(double[] series)
         {
-            foreach (int num in series)
+            foreach (double num in series)
             {
                 Console.Write($"{num} ");
             }
             Console.WriteLine("\n");
         }
-        static int[] Reverse(int[] series)
+        static double[] Reverse(double[] series)
         {
-            int[] reversed = new int[series.Length];
+            double[] reversed = new double[series.Length];
             for (int i = series.Length - 1; i >= 0; i--)
             {
                 reversed[series.Length - i - 1] = series[i];
             }
             return reversed;
         }
-        static int[] Sort(int[] series)
+        static double[] Sort(double[] series)
         {
-            int[] sorted = series.ToArray();
+            double[] sorted = series.ToArray();
             bool done;
-            int temp;
+            double temp;
             for (int i = 0; i < sorted.Length; i++)
             {
                 done = true;
@@ -88,9 +93,9 @@ namespace SeriesAnalyzer
             }
             return sorted;
         }
-        static int Max(int[] series)
+        static double Max(double[] series)
         {
-            int max = series[0];
+            double max = series[0];
             for (int i = 1; i < series.Length; i++)
             {
                 if (series[i] > max)
@@ -100,9 +105,9 @@ namespace SeriesAnalyzer
             }
             return max;
         }
-        static int Min(int[] series)
+        static double Min(double[] series)
         {
-            int min = series[0];
+            double min = series[0];
             for (int i = 1; i < series.Length; i++)
             {
                 if (series[i] < min)
@@ -112,21 +117,21 @@ namespace SeriesAnalyzer
             }
             return min;
         }
-        static int Sum(int[] series)
+        static double Sum(double[] series)
         {
-            int sum = 0;
-            foreach (int num in series)
+            double sum = 0;
+            foreach (double num in series)
             {
                 sum += num;
             }
-            return sum; 
+            return sum;
         }
-        static double Average(int[] series)
+        static double Average(double[] series)
         {
             double average = Sum(series) / Convert.ToDouble(series.Length);
             return average;
         }
-        static string DisplayMenu(int[] series)
+        static string DisplayMenu(double[] series)
         {
             Console.Write($"\nCurrent Series: ");
             DisplaySeries(series);
@@ -152,13 +157,13 @@ namespace SeriesAnalyzer
         {
             Console.WriteLine($"You selected option '{choice}':\n");
         }
-        static bool ActivateChoice(string choice, int[] series)
+        static bool ActivateChoice(string choice, double[] series)
         {
             switch (choice)
             {
                 case "a":
                     DisplayChoice(choice);
-                    Console.WriteLine("Input a Series:\n\n");
+                    Console.WriteLine("Input a Series.\n\n");
                     return true;
                 case "b":
                     DisplayChoice(choice);
@@ -225,15 +230,15 @@ namespace SeriesAnalyzer
                     currentSeries = GetSeries();
                     validated = Validate(currentSeries);
                 }
-                int[] intSeries = ConvertToInts(currentSeries);
-                string choice = DisplayMenu(intSeries);
-                bool activated = ActivateChoice(choice, intSeries);
+                double[] doubleSeries = ConvertToDoubles(currentSeries);
+                string choice = DisplayMenu(doubleSeries);
+                bool activated = ActivateChoice(choice, doubleSeries);
                 while (!activated)
                 {
                     Console.WriteLine("Invalid input!\n");
                     Console.WriteLine("Please enter (a, b, etc.)\n");
-                    choice = DisplayMenu(intSeries);
-                    activated = ActivateChoice(choice, intSeries);
+                    choice = DisplayMenu(doubleSeries);
+                    activated = ActivateChoice(choice, doubleSeries);
                 }
                 if (choice == "a")
                 {
