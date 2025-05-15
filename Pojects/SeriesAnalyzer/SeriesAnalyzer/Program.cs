@@ -117,22 +117,20 @@ namespace SeriesAnalyzer
             }
             return min;
         }
-        //static int Sum(int[] series)
-        //{
-        //    // to fix
-        //    int sum = 0;
-        //    foreach (int num in series)
-        //    {
-        //        sum += num;
-        //    }
-        //    return sum; 
-        //}
-        //static double Average(int[] series)
-        //{
-        //    // to fix
-        //    double average = Sum(series) / Convert.ToDouble(series.Length);
-        //    return average;
-        //}
+        static double Sum(double[] series)
+        {
+            double sum = 0;
+            foreach (double num in series)
+            {
+                sum += num;
+            }
+            return sum;
+        }
+        static double Average(double[] series)
+        {
+            double average = Sum(series) / Convert.ToDouble(series.Length);
+            return average;
+        }
         //static string DisplayMenu(int[] series)
         //{
         //    // to fix
@@ -259,8 +257,8 @@ namespace SeriesAnalyzer
             //}
             double[] nums = { 7, -5, -2.5, 0.5, 2 };
             DisplaySeries(Sort(nums));
-            Console.WriteLine(Max(nums));
-            Console.WriteLine(Min(nums));
+            Console.WriteLine(Sum(nums));
+            Console.WriteLine(Average(nums));
         }
     }
 }
