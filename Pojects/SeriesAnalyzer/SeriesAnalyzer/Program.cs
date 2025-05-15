@@ -41,14 +41,14 @@ namespace SeriesAnalyzer
             return true;
         }
 
-        static int[] ConvertToInts(string[] series)
+        static double[] ConvertToDoubles(string[] series)
         {
-            int[] ints = new int[series.Length];
+            double[] doubles = new double[series.Length];
             for (int i = 0; i < series.Length; i++)
             {
-                ints[i] = Convert.ToInt32(series[i]);
+                doubles[i] = Convert.ToDouble(series[i]);
             }
-            return ints;
+            return doubles;
         }
         static void DisplaySeries(int[] series)
         {
@@ -230,7 +230,7 @@ namespace SeriesAnalyzer
                     currentSeries = GetSeries();
                     validated = Validate(currentSeries);
                 }
-                int[] intSeries = ConvertToInts(currentSeries);
+                double[] doubleSeries = ConvertToDoubles(currentSeries);
                 string choice = DisplayMenu(intSeries);
                 bool activated = ActivateChoice(choice, intSeries);
                 while (!activated)
