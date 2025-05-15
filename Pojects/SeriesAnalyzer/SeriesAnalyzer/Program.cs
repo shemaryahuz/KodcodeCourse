@@ -214,49 +214,41 @@ namespace SeriesAnalyzer
         }
         static void Main(string[] args)
         {
-            //Console.WriteLine("Welcome to The Series Analyzer!\n\n");
-            //string[] currentSeries = args.ToArray();
-            //if (currentSeries.Length == 0)
-            //{
-            //    currentSeries = GetSeries();
-            //}
-            //bool toExit = false;
-            //while (!toExit)
-            //{
-            //    bool validated = Validate(currentSeries);
-            //    while (!validated)
-            //    {
-            //        Console.WriteLine("\nCurrent series is invalid!\n");
-            //        currentSeries = GetSeries();
-            //        validated = Validate(currentSeries);
-            //    }
-            //    double[] doubleSeries = ConvertToDoubles(currentSeries);
-            //    // to fix
-            //    string choice = DisplayMenu(intSeries);
-            //    // to fix
-            //    bool activated = ActivateChoice(choice, intSeries);
-            //    while (!activated)
-            //    {
-            //        Console.WriteLine("Invalid input!\n");
-            //        Console.WriteLine("Please enter (a, b, etc.)\n");
-            //        // to fix
-            //        choice = DisplayMenu(intSeries);
-            //        // to fix
-            //        activated = ActivateChoice(choice, intSeries);
-            //    }
-            //    if (choice == "a")
-            //    {
-            //        currentSeries = GetSeries();
-            //    }
-            //    if (choice == "j")
-            //    {
-            //        toExit = true;
-            //    }
-            //}
-            double[] nums = { 7, -5, -2.5, 0.5, 2 };
-            DisplaySeries(Sort(nums));
-            Console.WriteLine(Sum(nums));
-            Console.WriteLine(Average(nums));
+            Console.WriteLine("Welcome to The Series Analyzer!\n\n");
+            string[] currentSeries = args.ToArray();
+            if (currentSeries.Length == 0)
+            {
+                currentSeries = GetSeries();
+            }
+            bool toExit = false;
+            while (!toExit)
+            {
+                bool validated = Validate(currentSeries);
+                while (!validated)
+                {
+                    Console.WriteLine("\nCurrent series is invalid!\n");
+                    currentSeries = GetSeries();
+                    validated = Validate(currentSeries);
+                }
+                double[] doubleSeries = ConvertToDoubles(currentSeries);
+                string choice = DisplayMenu(doubleSeries);
+                bool activated = ActivateChoice(choice, doubleSeries);
+                while (!activated)
+                {
+                    Console.WriteLine("Invalid input!\n");
+                    Console.WriteLine("Please enter (a, b, etc.)\n");
+                    choice = DisplayMenu(doubleSeries);
+                    activated = ActivateChoice(choice, doubleSeries);
+                }
+                if (choice == "a")
+                {
+                    currentSeries = GetSeries();
+                }
+                if (choice == "j")
+                {
+                    toExit = true;
+                }
+            }
         }
     }
 }
