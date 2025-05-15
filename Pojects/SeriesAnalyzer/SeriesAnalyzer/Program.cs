@@ -224,9 +224,18 @@ namespace SeriesAnalyzer
                 bool validated = Validate(currentSeries);
                 while (!validated)
                 {
+                    if (currentSeries[0] ==  "j" )
+                    {
+                        toExit = true;
+                        break;
+                    }
                     Console.WriteLine("\nCurrent series is invalid!\n");
                     currentSeries = GetSeries();
                     validated = Validate(currentSeries);
+                }
+                if (toExit)
+                {
+                    break;
                 }
                 double[] doubleSeries = ConvertToDoubles(currentSeries);
                 string choice = DisplayMenu(doubleSeries);
