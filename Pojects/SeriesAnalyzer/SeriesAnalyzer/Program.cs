@@ -13,7 +13,10 @@ namespace SeriesAnalyzer
     {
         static string[] GetSeries()
         {
-            Console.WriteLine("Please enter series of rational numbers saperated by space (at least 3 positive numbers!):\n");
+            Console.WriteLine("" +
+                "Please Enter series of rational numbers saperated by space " +
+                "(at least 3 positive numbers!):\n\n" +
+                "(You can Enter 'j' to Exit)\n");
             string[] series = Console.ReadLine().Split(' ');
             return series;
         }
@@ -212,7 +215,9 @@ namespace SeriesAnalyzer
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to The Series Analyzer!\n\n");
+            Console.WriteLine(
+                "Welcome to The Series Analyzer!\n\n" +
+                "At any point of the program Enter 'j' to Exit");
             string[] currentSeries = args.ToArray();
             if (currentSeries.Length == 0)
             {
@@ -224,7 +229,7 @@ namespace SeriesAnalyzer
                 bool validated = Validate(currentSeries);
                 while (!validated)
                 {
-                    if (currentSeries[0] ==  "j" )
+                    if (currentSeries[0] ==  "j" && currentSeries.Length == 1)
                     {
                         toExit = true;
                         break;
