@@ -153,10 +153,6 @@ namespace SeriesAnalyzer
             Console.WriteLine();
             return choice;
         }
-        static void DisplayChoice(string choice)
-        {
-            Console.WriteLine($"You selected option '{choice}':\n");
-        }
         static bool ActivateChoice(string choice, double[] series)
         {
             bool validated;
