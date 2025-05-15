@@ -93,32 +93,30 @@ namespace SeriesAnalyzer
             }
             return sorted;
         }
-        //static int Max(int[] series)
-        //{
-        //    // to fix
-        //    int max = series[0];
-        //    for (int i = 1; i < series.Length; i++)
-        //    {
-        //        if (series[i] > max)
-        //        {
-        //            max = series[i];
-        //        }
-        //    }
-        //    return max;
-        //}
-        //static int Min(int[] series)
-        //{
-        //    // to fix
-        //    int min = series[0];
-        //    for (int i = 1; i < series.Length; i++)
-        //    {
-        //        if (series[i] < min)
-        //        {
-        //            min = series[i];
-        //        }
-        //    }
-        //    return min;
-        //}
+        static double Max(double[] series)
+        {
+            double max = series[0];
+            for (int i = 1; i < series.Length; i++)
+            {
+                if (series[i] > max)
+                {
+                    max = series[i];
+                }
+            }
+            return max;
+        }
+        static double Min(double[] series)
+        {
+            double min = series[0];
+            for (int i = 1; i < series.Length; i++)
+            {
+                if (series[i] < min)
+                {
+                    min = series[i];
+                }
+            }
+            return min;
+        }
         //static int Sum(int[] series)
         //{
         //    // to fix
@@ -261,6 +259,8 @@ namespace SeriesAnalyzer
             //}
             double[] nums = { 7, -5, -2.5, 0.5, 2 };
             DisplaySeries(Sort(nums));
+            Console.WriteLine(Max(nums));
+            Console.WriteLine(Min(nums));
         }
     }
 }
