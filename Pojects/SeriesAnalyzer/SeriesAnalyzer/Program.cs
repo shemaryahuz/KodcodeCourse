@@ -157,62 +157,61 @@ namespace SeriesAnalyzer
         {
             Console.WriteLine($"You selected option '{choice}':\n");
         }
-        //static bool ActivateChoice(string choice, int[] series)
-        //{
-        //    // to fix
-        //    switch (choice)
-        //    {
-        //        case "a":
-        //            DisplayChoice(choice);
-        //            Console.WriteLine("Input a Series:\n\n");
-        //            return true;
-        //        case "b":
-        //            DisplayChoice(choice);
-        //            Console.Write("Current Series: ");
-        //            DisplaySeries(series);
-        //            return true;
-        //        case "c":
-        //            DisplayChoice(choice);
-        //            Console.Write("Reversed Series: ");
-        //            DisplaySeries(Reverse(series));
-        //            return true;
-        //        case "d":
-        //            DisplayChoice(choice);
-        //            Console.Write("Sorted Series: ");
-        //            DisplaySeries(Sort(series));
-        //            return true;
-        //        case "e":
-        //            DisplayChoice(choice);
-        //            Console.Write("Max Value: ");
-        //            Console.WriteLine($"{Max(series)}\n");
-        //            return true;
-        //        case "f":
-        //            DisplayChoice(choice);
-        //            Console.Write("Min Value: ");
-        //            Console.WriteLine($"{Min(series)}\n");
-        //            return true;
-        //        case "g":
-        //            DisplayChoice(choice);
-        //            Console.Write("Average of Series: ");
-        //            Console.WriteLine($"{Average(series)}\n");
-        //            return true;
-        //        case "h":
-        //            DisplayChoice(choice);
-        //            Console.WriteLine($"Number of Elements: {series.Length}");
-        //            return true;
-        //        case "i":
-        //            DisplayChoice(choice);
-        //            Console.Write("Sum of Series: ");
-        //            Console.WriteLine($"{Sum(series)}\n");
-        //            return true;
-        //        case "j":
-        //            DisplayChoice(choice);
-        //            Console.WriteLine("Exit.");
-        //            return true;
-        //        default:
-        //            return false;
-        //    }
-        //}
+        static bool ActivateChoice(string choice, double[] series)
+        {
+            switch (choice)
+            {
+                case "a":
+                    DisplayChoice(choice);
+                    Console.WriteLine("Input a Series:\n\n");
+                    return true;
+                case "b":
+                    DisplayChoice(choice);
+                    Console.Write("Current Series: ");
+                    DisplaySeries(series);
+                    return true;
+                case "c":
+                    DisplayChoice(choice);
+                    Console.Write("Reversed Series: ");
+                    DisplaySeries(Reverse(series));
+                    return true;
+                case "d":
+                    DisplayChoice(choice);
+                    Console.Write("Sorted Series: ");
+                    DisplaySeries(Sort(series));
+                    return true;
+                case "e":
+                    DisplayChoice(choice);
+                    Console.Write("Max Value: ");
+                    Console.WriteLine($"{Max(series)}\n");
+                    return true;
+                case "f":
+                    DisplayChoice(choice);
+                    Console.Write("Min Value: ");
+                    Console.WriteLine($"{Min(series)}\n");
+                    return true;
+                case "g":
+                    DisplayChoice(choice);
+                    Console.Write("Average of Series: ");
+                    Console.WriteLine($"{Average(series)}\n");
+                    return true;
+                case "h":
+                    DisplayChoice(choice);
+                    Console.WriteLine($"Number of Elements: {series.Length}");
+                    return true;
+                case "i":
+                    DisplayChoice(choice);
+                    Console.Write("Sum of Series: ");
+                    Console.WriteLine($"{Sum(series)}\n");
+                    return true;
+                case "j":
+                    DisplayChoice(choice);
+                    Console.WriteLine("Exit.");
+                    return true;
+                default:
+                    return false;
+            }
+        }
         static void Main(string[] args)
         {
             //Console.WriteLine("Welcome to The Series Analyzer!\n\n");
