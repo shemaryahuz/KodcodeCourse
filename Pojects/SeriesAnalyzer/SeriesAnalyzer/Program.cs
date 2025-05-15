@@ -52,6 +52,7 @@ namespace SeriesAnalyzer
         }
         static void DisplaySeries(double[] series)
         {
+            // to fix
             foreach (double num in series)
             {
                 Console.Write($"{num} ");
@@ -60,6 +61,7 @@ namespace SeriesAnalyzer
         }
         static int[] Reverse(int[] series)
         {
+            // to fix
             int[] reversed = new int[series.Length];
             for (int i = series.Length - 1; i >= 0; i--)
             {
@@ -69,6 +71,7 @@ namespace SeriesAnalyzer
         }
         static int[] Sort(int[] series)
         {
+            // to fix
             int[] sorted = series.ToArray();
             bool done;
             int temp;
@@ -95,6 +98,7 @@ namespace SeriesAnalyzer
         }
         static int Max(int[] series)
         {
+            // to fix
             int max = series[0];
             for (int i = 1; i < series.Length; i++)
             {
@@ -107,6 +111,7 @@ namespace SeriesAnalyzer
         }
         static int Min(int[] series)
         {
+            // to fix
             int min = series[0];
             for (int i = 1; i < series.Length; i++)
             {
@@ -119,6 +124,7 @@ namespace SeriesAnalyzer
         }
         static int Sum(int[] series)
         {
+            // to fix
             int sum = 0;
             foreach (int num in series)
             {
@@ -128,11 +134,13 @@ namespace SeriesAnalyzer
         }
         static double Average(int[] series)
         {
+            // to fix
             double average = Sum(series) / Convert.ToDouble(series.Length);
             return average;
         }
         static string DisplayMenu(int[] series)
         {
+            // to fix
             Console.Write($"\nCurrent Series: ");
             DisplaySeries(series);
             Console.WriteLine(
@@ -159,6 +167,7 @@ namespace SeriesAnalyzer
         }
         static bool ActivateChoice(string choice, int[] series)
         {
+            // to fix
             switch (choice)
             {
                 case "a":
@@ -214,41 +223,47 @@ namespace SeriesAnalyzer
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to The Series Analyzer!\n\n");
-            string[] currentSeries = args.ToArray();
-            if (currentSeries.Length == 0)
-            {
-                currentSeries = GetSeries();
-            }
-            bool toExit = false;
-            while (!toExit)
-            {
-                bool validated = Validate(currentSeries);
-                while (!validated)
-                {
-                    Console.WriteLine("\nCurrent series is invalid!\n");
-                    currentSeries = GetSeries();
-                    validated = Validate(currentSeries);
-                }
-                double[] doubleSeries = ConvertToDoubles(currentSeries);
-                string choice = DisplayMenu(intSeries);
-                bool activated = ActivateChoice(choice, intSeries);
-                while (!activated)
-                {
-                    Console.WriteLine("Invalid input!\n");
-                    Console.WriteLine("Please enter (a, b, etc.)\n");
-                    choice = DisplayMenu(intSeries);
-                    activated = ActivateChoice(choice, intSeries);
-                }
-                if (choice == "a")
-                {
-                    currentSeries = GetSeries();
-                }
-                if (choice == "j")
-                {
-                    toExit = true;
-                }
-            }
+            //Console.WriteLine("Welcome to The Series Analyzer!\n\n");
+            //string[] currentSeries = args.ToArray();
+            //if (currentSeries.Length == 0)
+            //{
+            //    currentSeries = GetSeries();
+            //}
+            //bool toExit = false;
+            //while (!toExit)
+            //{
+            //    bool validated = Validate(currentSeries);
+            //    while (!validated)
+            //    {
+            //        Console.WriteLine("\nCurrent series is invalid!\n");
+            //        currentSeries = GetSeries();
+            //        validated = Validate(currentSeries);
+            //    }
+            //    double[] doubleSeries = ConvertToDoubles(currentSeries);
+            //    // to fix
+            //    string choice = DisplayMenu(intSeries);
+            //    // to fix
+            //    bool activated = ActivateChoice(choice, intSeries);
+            //    while (!activated)
+            //    {
+            //        Console.WriteLine("Invalid input!\n");
+            //        Console.WriteLine("Please enter (a, b, etc.)\n");
+            //        // to fix
+            //        choice = DisplayMenu(intSeries);
+            //        // to fix
+            //        activated = ActivateChoice(choice, intSeries);
+            //    }
+            //    if (choice == "a")
+            //    {
+            //        currentSeries = GetSeries();
+            //    }
+            //    if (choice == "j")
+            //    {
+            //        toExit = true;
+            //    }
+            //}
+            double[] nums = { -5, -2.5, 0.5, 2 };
+            DisplaySeries(nums);
         }
     }
 }
