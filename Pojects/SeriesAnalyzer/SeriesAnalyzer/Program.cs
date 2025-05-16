@@ -219,6 +219,12 @@ namespace SeriesAnalyzer
                 "Welcome to The Series Analyzer!\n\n" +
                 "At any point of the program Enter 'j' to Exit.");
         }
+        static void ExitMessage()
+        {
+            Console.WriteLine(
+                "\nThank you for using our series analyzer!\n\n" +
+                "We look forward to seeing you again!");
+        }
         static void Main(string[] args)
         {
             WelcomeMessage();
@@ -267,6 +273,7 @@ namespace SeriesAnalyzer
                     toExit = true;
                 }
             }
+            ExitMessage();
         }
     }
 }
