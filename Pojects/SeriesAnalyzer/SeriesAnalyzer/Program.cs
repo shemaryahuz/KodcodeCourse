@@ -11,15 +11,6 @@ namespace SeriesAnalyzer
 {
     internal class Program
     {
-        static string[] GetSeries()
-        {
-            Console.WriteLine("" +
-                "Please Enter series of rational numbers saperated by space " +
-                "(at least 3 positive numbers!):\n\n" +
-                "(You can Enter 'j' to Exit).\n");
-            string[] series = Console.ReadLine().Split(' ');
-            return series;
-        }
         static bool Validate(string[] series)
         {
             int positiveNumbers = 0;
@@ -224,6 +215,15 @@ namespace SeriesAnalyzer
             Console.WriteLine(
                 "\nThank you for using our series analyzer!\n\n" +
                 "We look forward to seeing you again!");
+        }
+        static string[] GetSeries()
+        {
+            Console.WriteLine("" +
+                "Please Enter series of rational numbers saperated by space " +
+                "(at least 3 positive numbers!):\n\n" +
+                "(You can Enter 'j' to Exit).\n");
+            string[] series = Console.ReadLine().Split(' ');
+            return series;
         }
         static void Analyze(string[] currentSeries)
         {
