@@ -213,11 +213,15 @@ namespace SeriesAnalyzer
                 }
             return validated;
         }
-        static void Main(string[] args)
+        static void WelcomeMessage()
         {
             Console.WriteLine(
                 "Welcome to The Series Analyzer!\n\n" +
-                "At any point of the program Enter 'j' to Exit");
+                "At any point of the program Enter 'j' to Exit.");
+        }
+        static void Main(string[] args)
+        {
+            WelcomeMessage();
             string[] currentSeries = args.ToArray();
             if (currentSeries.Length == 0)
             {
@@ -234,7 +238,9 @@ namespace SeriesAnalyzer
                         toExit = true;
                         break;
                     }
-                    Console.WriteLine("\nCurrent series is invalid!\n");
+                    Console.WriteLine(
+                        "\nNo series was entered, " +
+                        "Or the current series is invalid.\n");
                     currentSeries = GetSeries();
                     validated = Validate(currentSeries);
                 }
