@@ -215,48 +215,45 @@ namespace SeriesAnalyzer
                 "\nThank you for using our series analyzer!\n\n" +
                 "We look forward to seeing you again!");
         }
-        static string[] GetSeries(string[] series)
+        static string[] GetSeries(string[] currentSeries, bool toReplace = false)
         {
-            string[] currentSeries = series.ToArray();
-            bool validated = Validate(currentSeries);
-            if (!validated)
+            if (toReplace)
             {
-                Console.WriteLine(
-                        "\nNo series was entered, " +
-                        "Or the current series is invalid.\n");
+                currentSeries = GetSeries(currentSeries).ToArray();
             }
-            Console.WriteLine("" +
+            bool validated = Validate(currentSeries);
+            while (!validated)
+            {
+                if (currentSeries.Length == 1 && currentSeries[0] == "j")
+                {
+                    return currentSeries;
+                }
+                else
+                {
+                    Console.WriteLine(
+                        "\nNo series was entered.\n" +
+                        "Or the current series is invalid.\n");
+                }
+                Console.WriteLine("" +
                 "Please Enter series of rational numbers saperated by space " +
                 "(at least 3 positive numbers!):\n\n" +
                 "(You can Enter 'j' to Exit).\n");
-            currentSeries = Console.ReadLine().Split(' ');
+                currentSeries = Console.ReadLine().Split(' ');
+                validated = Validate(currentSeries);
+            }           
             return currentSeries;
         }
 
-        // To fix exit condition and getting series!!!
+        // To fix to replace option!!! if the user entered 'a'
         static void Analyze(string[] currentSeries)
         {
             bool toExit = false;
+            if (currentSeries.Length == 1 && currentSeries[0] == "j")
+            {
+                toExit = true;
+            }
             while (!toExit)
             {
-                bool validated = Validate(currentSeries);
-                while (!validated)
-                {
-                    if (currentSeries[0] == "j" && currentSeries.Length == 1)
-                    {
-                        toExit = true;
-                        break;
-                    }
-                    Console.WriteLine(
-                        "\nNo series was entered, " +
-                        "Or the current series is invalid.\n");
-                    currentSeries = GetSeries();
-                    validated = Validate(currentSeries);
-                }
-                if (toExit)
-                {
-                    break;
-                }
                 double[] doubleSeries = ConvertToDoubles(currentSeries);
                 string choice = DisplayMenu(doubleSeries);
                 bool activated = ActivateChoice(choice, doubleSeries);
@@ -269,7 +266,7 @@ namespace SeriesAnalyzer
                 }
                 if (choice == "a")
                 {
-                    currentSeries = GetSeries();
+                    currentSeries = GetSeries(currentSeries, true);
                 }
                 if (choice == "j")
                 {
