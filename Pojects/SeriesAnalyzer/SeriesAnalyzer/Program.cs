@@ -34,7 +34,6 @@ namespace SeriesAnalyzer
             }
             return true;
         }
-
         static double[] ConvertToDoubles(string[] series)
         {
             double[] doubles = new double[series.Length];
@@ -216,15 +215,25 @@ namespace SeriesAnalyzer
                 "\nThank you for using our series analyzer!\n\n" +
                 "We look forward to seeing you again!");
         }
-        static string[] GetSeries()
+        static string[] GetSeries(string[] series)
         {
+            string[] currentSeries = series.ToArray();
+            bool validated = Validate(currentSeries);
+            if (!validated)
+            {
+                Console.WriteLine(
+                        "\nNo series was entered, " +
+                        "Or the current series is invalid.\n");
+            }
             Console.WriteLine("" +
                 "Please Enter series of rational numbers saperated by space " +
                 "(at least 3 positive numbers!):\n\n" +
                 "(You can Enter 'j' to Exit).\n");
-            string[] series = Console.ReadLine().Split(' ');
-            return series;
+            currentSeries = Console.ReadLine().Split(' ');
+            return currentSeries;
         }
+
+        // To fix exit condition and getting series!!!
         static void Analyze(string[] currentSeries)
         {
             bool toExit = false;
@@ -270,12 +279,8 @@ namespace SeriesAnalyzer
         }
         static void Main(string[] args)
         {
-            WelcomeMessage();
-            string[] currentSeries = args.ToArray();
-            if (currentSeries.Length == 0)
-            {
-                currentSeries = GetSeries();
-            }
+            WelcomeMessage();          
+            string[] currentSeries = GetSeries(args);
             Analyze(currentSeries);
             ExitMessage();
         }
