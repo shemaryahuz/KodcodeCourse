@@ -253,12 +253,13 @@ namespace SeriesAnalyzer
         static void Analyze(string[] currentSeries)
         {
             bool toExit = false;
-            if (currentSeries.Length == 1 && currentSeries[0] == "j")
-            {
-                toExit = true;
-            }
             while (!toExit)
             {
+                if (currentSeries.Length == 1 && currentSeries[0] == "j")
+                {
+                    toExit = true;
+                    continue;
+                }
                 double[] doubleSeries = ConvertToDoubles(currentSeries);
                 string choice = DisplayMenu(doubleSeries);
                 bool activated = ActivateChoice(choice, doubleSeries);
@@ -271,7 +272,7 @@ namespace SeriesAnalyzer
                 }
                 if (choice == "a")
                 {
-                    currentSeries = GetSeries(currentSeries);
+                    currentSeries = ReplaceSeries();
                 }
                 if (choice == "j")
                 {
