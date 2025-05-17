@@ -282,8 +282,8 @@ namespace SeriesAnalyzer
         static void Main(string[] args)
         {
             WelcomeMessage();          
-            string[] Series = GetSeries(args);
-            Analyze(Series);
+            string[] series = GetSeries(args);
+            Analyze(series);
             ExitMessage();
         }
     }
