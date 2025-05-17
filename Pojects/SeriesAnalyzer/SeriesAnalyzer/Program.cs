@@ -22,21 +22,17 @@ namespace SeriesAnalyzer
             bool validated = Validate(currentSeries);
             while (!validated)
             {
-                if (currentSeries.Length == 1 && currentSeries[0] == "j")
-                {
-                    return currentSeries;
-                }
-                else
-                {
-                    Console.WriteLine(
-                        "\nNo series was entered.\n" +
-                        "Or the current series is invalid.\n");
-                }
                 Console.WriteLine(
+                "\nNo series was entered.\n" +
+                "Or the current series is invalid.\n" +
                 "Please Enter a Series of rational numbers saperated by space " +
                 "(at least 3 positive numbers!):\n\n" +
                 "(You can Enter 'j' to Exit).\n");
                 currentSeries = Console.ReadLine().Split(' ');
+                if (currentSeries.Length == 1 && currentSeries[0] == "j")
+                {
+                    return currentSeries;
+                }
                 validated = Validate(currentSeries);
             }
             return currentSeries;
@@ -169,16 +165,16 @@ namespace SeriesAnalyzer
             DisplaySeries(series);
             Console.WriteLine(
                 "Menu:\n\n" +
-                "a.Input a Series. (Replace the current series)\n\n" +
-                "b.Display the series in the order it was entered.\n\n" +
-                "c.Display the series in the reversed order it was entered.\n\n" +
-                "d.Display the series in sorted order (from low to high).\n\n" +
-                "e.Display the Max value of the series.\n\n" +
-                "f.Display the Min value of the series.\n\n" +
-                "g.Display the Average of the series.\n\n" +
-                "h.Display the Number of elements in the series.\n\n" +
-                "i.Display the Sum of the series.\n\n" +
-                "j.Exit.\n\n" +
+                "a. Input a Series. (Replace the current series)\n\n" +
+                "b. Display the series in the order it was entered.\n\n" +
+                "c. Display the series in the reversed order it was entered.\n\n" +
+                "d. Display the series in sorted order (from low to high).\n\n" +
+                "e. Display the Max value of the series.\n\n" +
+                "f. Display the Min value of the series.\n\n" +
+                "g. Display the Average of the series.\n\n" +
+                "h. Display the Number of elements in the series.\n\n" +
+                "i. Display the Sum of the series.\n\n" +
+                "j. Exit.\n\n" +
                 "Please enter your choice (a, b, etc.):\n"
                 );
         }
@@ -207,34 +203,34 @@ namespace SeriesAnalyzer
                         Console.WriteLine("Input a Series.\n\n");
                         break;
                     case "b":
-                        Console.Write("Current Series: ");
+                        Console.Write("The Current Series: ");
                         DisplaySeries(series);
                         break;
                     case "c":
-                        Console.Write("Reversed Series: ");
+                        Console.Write("Reversed order of the Series: ");
                         DisplaySeries(Reverse(series));
                         break;
                     case "d":
-                        Console.Write("Sorted Series: ");
+                        Console.Write("Sorted order of the Series: ");
                         DisplaySeries(Sort(series));
                         break;
                     case "e":
-                        Console.Write("Max Value: ");
+                        Console.Write("Max Value of the Series: ");
                         Console.WriteLine($"{Max(series)}\n");
                         break;
                     case "f":
-                        Console.Write("Min Value: ");
+                        Console.Write("Min Value of the Series: ");
                         Console.WriteLine($"{Min(series)}\n");
                         break;
                     case "g":
-                        Console.Write("Average of Series: ");
+                        Console.Write("Average of the Series: ");
                         Console.WriteLine($"{Average(series)}\n");
                         break;
                     case "h":
-                        Console.WriteLine($"Number of Elements: {series.Length}");
+                        Console.WriteLine($"Number of Elements in the Series: {series.Length}");
                         break;
                     case "i":
-                        Console.Write("Sum of Series: ");
+                        Console.Write("Sum of the Series: ");
                         Console.WriteLine($"{Sum(series)}\n");
                         break;
                     case "j":
