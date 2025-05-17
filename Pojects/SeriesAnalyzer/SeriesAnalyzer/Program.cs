@@ -11,6 +11,45 @@ namespace SeriesAnalyzer
 {
     internal class Program
     {
+        static void WelcomeMessage()
+        {
+            Console.WriteLine(
+                "Welcome to The Series Analyzer!\n\n" +
+                "At any point of the program Enter 'j' to Exit.");
+        }
+        static string[] GetSeries(string[] currentSeries)
+        {
+            bool validated = Validate(currentSeries);
+            while (!validated)
+            {
+                if (currentSeries.Length == 1 && currentSeries[0] == "j")
+                {
+                    return currentSeries;
+                }
+                else
+                {
+                    Console.WriteLine(
+                        "\nNo series was entered.\n" +
+                        "Or the current series is invalid.\n");
+                }
+                Console.WriteLine(
+                "Please Enter a Series of rational numbers saperated by space " +
+                "(at least 3 positive numbers!):\n\n" +
+                "(You can Enter 'j' to Exit).\n");
+                currentSeries = Console.ReadLine().Split(' ');
+                validated = Validate(currentSeries);
+            }
+            return currentSeries;
+        }
+        static string[] ReplaceSeries()
+        {
+            Console.WriteLine(
+                "Please Enter a New Series of rational numbers saperated by space " +
+                "(at least 3 positive numbers!):\n\n" +
+                "(You can Enter 'j' to Exit).\n");
+            string[] newSeries = Console.ReadLine().Split(' ');
+            return newSeries;
+        }
         static bool Validate(string[] series)
         {
             int positiveNumbers = 0;
@@ -203,53 +242,6 @@ namespace SeriesAnalyzer
                 }
             return validated;
         }
-        static void WelcomeMessage()
-        {
-            Console.WriteLine(
-                "Welcome to The Series Analyzer!\n\n" +
-                "At any point of the program Enter 'j' to Exit.");
-        }
-        static void ExitMessage()
-        {
-            Console.WriteLine(
-                "\nThank you for using our series analyzer!\n\n" +
-                "We look forward to seeing you again!");
-        }
-        static string[] GetSeries(string[] currentSeries)
-        {
-            bool validated = Validate(currentSeries);
-            while (!validated)
-            {
-                if (currentSeries.Length == 1 && currentSeries[0] == "j")
-                {
-                    return currentSeries;
-                }
-                else
-                {
-                    Console.WriteLine(
-                        "\nNo series was entered.\n" +
-                        "Or the current series is invalid.\n");
-                }
-                Console.WriteLine(
-                "Please Enter a Series of rational numbers saperated by space " +
-                "(at least 3 positive numbers!):\n\n" +
-                "(You can Enter 'j' to Exit).\n");
-                currentSeries = Console.ReadLine().Split(' ');
-                validated = Validate(currentSeries);
-            }           
-            return currentSeries;
-        }
-        static string[] ReplaceSeries()
-        {
-            Console.WriteLine(
-                "Please Enter a New Series of rational numbers saperated by space " +
-                "(at least 3 positive numbers!):\n\n" +
-                "(You can Enter 'j' to Exit).\n");
-            string[] newSeries = Console.ReadLine().Split(' ');
-            return newSeries;
-        }
-
-        // To fix to replace option!!! if the user entered 'a'
         static void Analyze(string[] currentSeries)
         {
             bool toExit = false;
@@ -280,11 +272,17 @@ namespace SeriesAnalyzer
                 }
             }
         }
+        static void ExitMessage()
+        {
+            Console.WriteLine(
+                "\nThank you for using our series analyzer!\n\n" +
+                "We look forward to seeing you again!");
+        }
         static void Main(string[] args)
         {
             WelcomeMessage();          
-            string[] currentSeries = GetSeries(args);
-            Analyze(currentSeries);
+            string[] Series = GetSeries(args);
+            Analyze(Series);
             ExitMessage();
         }
     }
