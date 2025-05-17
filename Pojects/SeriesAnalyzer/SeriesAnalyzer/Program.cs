@@ -11,12 +11,26 @@ namespace SeriesAnalyzer
 {
     internal class Program
     {
+        /// <summary>
+        /// Displays the welcome message and instructions to the user.
+        /// </summary>
         static void WelcomeMessage()
         {
             Console.WriteLine(
                 "Welcome to The Series Analyzer!\n\n" +
                 "At any point of the program Enter 'j' to Exit.");
         }
+
+        /// <summary>
+        /// Parses and validates the initial series, using command-line args if valid,
+        /// otherwise prompts the user until a valid series or exit command is received.
+        /// </summary>
+        /// <param name="currentSeries">
+        /// Initial series of string tokens (from args or prior input).
+        /// </param>
+        /// <returns>
+        /// A valid string[] of tokens or a single-element ["j"] to indicate exit.
+        /// </returns>
         static string[] GetSeries(string[] currentSeries)
         {
             bool validated = Validate(currentSeries);
@@ -37,6 +51,12 @@ namespace SeriesAnalyzer
             }
             return currentSeries;
         }
+        /// <summary>
+        /// Prompts the user to replace the current series with a new one.
+        /// </summary>
+        /// <returns>
+        /// The new series tokens (or ["j"] to indicate exit).
+        /// </returns>
         static string[] ReplaceSeries()
         {
             Console.WriteLine(
@@ -46,6 +66,11 @@ namespace SeriesAnalyzer
             string[] newSeries = Console.ReadLine().Split(' ');
             return newSeries;
         }
+        /// <summary>
+        /// Validates that the provided tokens can be parsed to at least three positive doubles.
+        /// </summary>
+        /// <param name="series">Array of string tokens to validate.</param>
+        /// <returns>True if valid; otherwise, false.</returns>
         static bool Validate(string[] series)
         {
             int positiveNumbers = 0;
@@ -69,6 +94,11 @@ namespace SeriesAnalyzer
             }
             return true;
         }
+        /// <summary>
+        /// Converts an array of numeric-string tokens to a double[].
+        /// </summary>
+        /// <param name="series">String tokens representing numbers.</param>
+        /// <returns>Parsed double array.</returns>
         static double[] ConvertToDoubles(string[] series)
         {
             double[] doubles = new double[series.Length];
@@ -78,6 +108,10 @@ namespace SeriesAnalyzer
             }
             return doubles;
         }
+        /// <summary>
+        /// Writes the numeric series to the console in its current order.
+        /// </summary>
+        /// <param name="series">Double array to display.</param>
         static void DisplaySeries(double[] series)
         {
             foreach (double num in series)
@@ -86,6 +120,11 @@ namespace SeriesAnalyzer
             }
             Console.WriteLine("\n");
         }
+        /// <summary>
+        /// Returns a new double[] containing the elements of the input in reverse order.
+        /// </summary>
+        /// <param name="series">Original series.</param>
+        /// <returns>Reversed series.</returns>
         static double[] Reverse(double[] series)
         {
             double[] reversed = new double[series.Length];
@@ -95,6 +134,11 @@ namespace SeriesAnalyzer
             }
             return reversed;
         }
+        /// <summary>
+        /// Returns a new double[] sorted in ascending order using bubble-sort with early exit.
+        /// </summary>
+        /// <param name="series">Original series.</param>
+        /// <returns>Sorted series.</returns>
         static double[] Sort(double[] series)
         {
             double[] sorted = series.ToArray();
@@ -121,6 +165,11 @@ namespace SeriesAnalyzer
             }
             return sorted;
         }
+        /// <summary>
+        /// Computes the maximum value in the series.
+        /// </summary>
+        /// <param name="series">Series to analyze.</param>
+        /// <returns>Maximum element.</returns>
         static double Max(double[] series)
         {
             double max = series[0];
@@ -133,6 +182,11 @@ namespace SeriesAnalyzer
             }
             return max;
         }
+        /// <summary>
+        /// Computes the minimum value in the series.
+        /// </summary>
+        /// <param name="series">Series to analyze.</param>
+        /// <returns>Minimum element.</returns>
         static double Min(double[] series)
         {
             double min = series[0];
@@ -145,6 +199,11 @@ namespace SeriesAnalyzer
             }
             return min;
         }
+        /// <summary>
+        /// Computes the sum of all elements in the series.
+        /// </summary>
+        /// <param name="series">Series to analyze.</param>
+        /// <returns>Sum of elements.</returns>
         static double Sum(double[] series)
         {
             double sum = 0;
@@ -154,11 +213,20 @@ namespace SeriesAnalyzer
             }
             return sum;
         }
+        /// <summary>
+        /// Computes the arithmetic average of the series.
+        /// </summary>
+        /// <param name="series">Series to analyze.</param>
+        /// <returns>Average value.</returns>
         static double Average(double[] series)
         {
             double average = Sum(series) / Convert.ToDouble(series.Length);
             return average;
         }
+        /// <summary>
+        /// Displays the main menu of operations along with the current series.
+        /// </summary>
+        /// <param name="series">Series to display in the menu header.</param>
         static void DisplayMenu(double[] series)
         {
             Console.Write($"\nCurrent Series: ");
@@ -178,12 +246,23 @@ namespace SeriesAnalyzer
                 "Please enter your choice (a, b, etc.):\n"
                 );
         }
+        /// <summary>
+        /// Reads and returns the user’s menu choice.
+        /// </summary>
+        /// <returns>Single-letter choice string.</returns>
         static string GetChoice()
         {
             string choice = Console.ReadLine();
             Console.WriteLine();
             return choice;
         }
+        /// <summary>
+        /// Validates and executes the user’s menu choice against the series.
+        /// Prints results or prompts for replacement/exit.
+        /// </summary>
+        /// <param name="choice">User’s single-letter selection.</param>
+        /// <param name="series">Current numeric series.</param>
+        /// <returns>True if the choice was valid; otherwise, false.</returns>
         static bool ActivateChoice(string choice, double[] series)
         {
             bool validated;
@@ -241,6 +320,11 @@ namespace SeriesAnalyzer
                 }
             return validated;
         }
+        /// <summary>
+        /// Drives the interactive analysis loop: displays menu, processes choices,
+        /// and handles series replacement or exit requests.
+        /// </summary>
+        /// <param name="currentSeries">Starting series tokens.</param>
         static void Analyze(string[] currentSeries)
         {
             bool toExit = false;
@@ -273,12 +357,19 @@ namespace SeriesAnalyzer
                 }
             }
         }
+        /// <summary>
+        /// Displays a friendly exit message.
+        /// </summary>
         static void ExitMessage()
         {
             Console.WriteLine(
                 "\nThank you for using our series analyzer!\n\n" +
                 "We look forward to seeing you again!");
         }
+        /// <summary>
+        /// Program entry point. Handles welcome, initial series load, analysis, and exit.
+        /// </summary>
+        /// <param name="args">Optional command-line arguments for initial series.</param>
         static void Main(string[] args)
         {
             WelcomeMessage();          
