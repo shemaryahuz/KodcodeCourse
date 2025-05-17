@@ -8,7 +8,7 @@
 
 *“Crunch numbers, discover patterns!”*
 
-A delightful C# console app that turns your list of positive numbers into insights—fast and fun.
+A delightful C# console app that turns your list of positive numbers into insights - fast and fun.
 
 
 ---
