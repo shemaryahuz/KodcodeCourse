@@ -1,4 +1,4 @@
-﻿<!-- Project Badges -->
+<!-- Project Badges -->
 <p align="center">
   <img src="https://img.shields.io/badge/.NET-6.0-blue?logo=dotnet" alt=".NET 6.0" />
   <img src="https://img.shields.io/badge/Status-Completed-green" alt="Status: Completed" />
@@ -57,7 +57,7 @@ Passionate C# learner.
 ### Build & Run
 ```bash
 # Clone repo
-git clone https://github.com/yourusername/series-analyzer.git
+git clone https://github.com/shemaryahuz/series-analyzer.git
 cd series-analyzer
 
 # Build
