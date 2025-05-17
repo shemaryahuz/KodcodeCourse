@@ -215,12 +215,8 @@ namespace SeriesAnalyzer
                 "\nThank you for using our series analyzer!\n\n" +
                 "We look forward to seeing you again!");
         }
-        static string[] GetSeries(string[] currentSeries, bool toReplace = false)
+        static string[] GetSeries(string[] currentSeries)
         {
-            if (toReplace)
-            {
-                currentSeries = GetSeries(currentSeries).ToArray();
-            }
             bool validated = Validate(currentSeries);
             while (!validated)
             {
@@ -234,14 +230,23 @@ namespace SeriesAnalyzer
                         "\nNo series was entered.\n" +
                         "Or the current series is invalid.\n");
                 }
-                Console.WriteLine("" +
-                "Please Enter series of rational numbers saperated by space " +
+                Console.WriteLine(
+                "Please Enter a Series of rational numbers saperated by space " +
                 "(at least 3 positive numbers!):\n\n" +
                 "(You can Enter 'j' to Exit).\n");
                 currentSeries = Console.ReadLine().Split(' ');
                 validated = Validate(currentSeries);
             }           
             return currentSeries;
+        }
+        static string[] ReplaceSeries()
+        {
+            Console.WriteLine(
+                "Please Enter a New Series of rational numbers saperated by space " +
+                "(at least 3 positive numbers!):\n\n" +
+                "(You can Enter 'j' to Exit).\n");
+            string[] newSeries = Console.ReadLine().Split(' ');
+            return newSeries;
         }
 
         // To fix to replace option!!! if the user entered 'a'
@@ -266,7 +271,7 @@ namespace SeriesAnalyzer
                 }
                 if (choice == "a")
                 {
-                    currentSeries = GetSeries(currentSeries, true);
+                    currentSeries = GetSeries(currentSeries);
                 }
                 if (choice == "j")
                 {
