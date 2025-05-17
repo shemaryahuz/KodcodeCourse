@@ -163,7 +163,7 @@ namespace SeriesAnalyzer
             double average = Sum(series) / Convert.ToDouble(series.Length);
             return average;
         }
-        static string DisplayMenu(double[] series)
+        static void DisplayMenu(double[] series)
         {
             Console.Write($"\nCurrent Series: ");
             DisplaySeries(series);
@@ -181,6 +181,9 @@ namespace SeriesAnalyzer
                 "j.Exit.\n\n" +
                 "Please enter your choice (a, b, etc.):\n"
                 );
+        }
+        static string GetChoice()
+        {
             string choice = Console.ReadLine();
             Console.WriteLine();
             return choice;
@@ -253,13 +256,15 @@ namespace SeriesAnalyzer
                     continue;
                 }
                 double[] doubleSeries = ConvertToDoubles(currentSeries);
-                string choice = DisplayMenu(doubleSeries);
+                DisplayMenu(doubleSeries);
+                string choice = GetChoice();
                 bool activated = ActivateChoice(choice, doubleSeries);
                 while (!activated)
                 {
                     Console.WriteLine("Invalid input!\n");
                     Console.WriteLine("Please enter (a, b, etc.)\n");
-                    choice = DisplayMenu(doubleSeries);
+                    DisplayMenu(doubleSeries);
+                    choice = GetChoice();
                     activated = ActivateChoice(choice, doubleSeries);
                 }
                 if (choice == "a")
