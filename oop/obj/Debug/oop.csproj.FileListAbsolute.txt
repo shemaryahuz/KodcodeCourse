@@ -1,0 +1,7 @@
+C:\Users\User\OneDrive\KodcodeCourse\oop\bin\Debug\oop.exe.config
+C:\Users\User\OneDrive\KodcodeCourse\oop\bin\Debug\oop.exe
+C:\Users\User\OneDrive\KodcodeCourse\oop\bin\Debug\oop.pdb
+C:\Users\User\OneDrive\KodcodeCourse\oop\obj\Debug\oop.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\KodcodeCourse\oop\obj\Debug\oop.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\KodcodeCourse\oop\obj\Debug\oop.exe
+C:\Users\User\OneDrive\KodcodeCourse\oop\obj\Debug\oop.pdb
