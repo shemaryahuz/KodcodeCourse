@@ -35,7 +35,32 @@ namespace ToolBox
                 tool.Discribe();
                 tool.Use();
             }
+            // Bounus 1
+            ToolBox toolBox = new ToolBox();
+            foreach (Tool tool in tools)
+            {
+                toolBox.AddTool(tool);
+            }
+            // Print sunnary
+            toolBox.ShowTools();
 
+
+            // Bounus 2
+            ToolCategory cutting = new ToolCategory("Cutting");
+            cutting.ShowTools();
+            ToolCategory fastening = new ToolCategory("Fastening");
+            fastening.ShowTools();
+            ToolCategory drilling = new ToolCategory("Drilling");
+            drilling.ShowTools();
+
+            // Bonuse 3
+            foreach (Tool tool in toolBox.GetTools())
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    tool.Use();
+                }
+            }
         }
     }
 }

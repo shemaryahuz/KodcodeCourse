@@ -15,7 +15,15 @@ namespace ToolBox
         }
         public override void Use()
         {
-            Console.WriteLine("The Screws are opened using the Wrench!");
+            if (UseCount < 0)
+            {
+                Console.WriteLine("The Screws are opened using the Wrench!");
+                this.UseCount--;
+            }
+            else
+            {
+                Console.WriteLine("Can't use!");
+            }
         }
     }
 }
