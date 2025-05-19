@@ -10,11 +10,19 @@ namespace ToolBox
     internal class Tool
     {
         protected string Name;
-        protected int Weight;
-        public Tool(string name, int weight)
+        protected double Weight;
+        public Tool(string name, double weight)
         {
             this.Name = name;
             this.Weight = weight;
+        }
+        public virtual void Discribe()
+        {
+            Console.WriteLine("This is a Tool!");
+        }
+        public virtual void Use()
+        {
+            Console.WriteLine("Tool is being used.");
         }
     }
 }
