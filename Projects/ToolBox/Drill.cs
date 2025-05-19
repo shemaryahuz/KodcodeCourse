@@ -16,7 +16,6 @@ namespace ToolBox
         public override void Use()
         {
             Console.WriteLine("The Drill is drilling into the wall!");
-            Console.WriteLine("test");
         }
     }
 }
