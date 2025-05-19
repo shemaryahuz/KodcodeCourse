@@ -35,7 +35,14 @@ namespace ToolBox
                 tool.Discribe();
                 tool.Use();
             }
-
+            // Bounus 1
+            ToolBox toolBox = new ToolBox();
+            foreach (Tool tool in tools)
+            {
+                toolBox.AddTool(tool);
+            }
+            // Print sunnary
+            toolBox.ShowTools();
         }
     }
 }

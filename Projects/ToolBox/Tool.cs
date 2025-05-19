@@ -16,6 +16,14 @@ namespace ToolBox
             this.Name = name;
             this.Weight = weight;
         }
+        public string GetName()
+        {
+            return this.Name;
+        }
+        public double GetWeight()
+        {
+            return this.Weight;
+        }
         public virtual void Discribe()
         {
             Console.WriteLine("This is a Tool!");
