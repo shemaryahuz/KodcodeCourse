@@ -1,0 +1,7 @@
+C:\Users\User\OneDrive\KodCodeCourse\OOP\AdvancedExercises\bin\Debug\AdvancedExercises.exe.config
+C:\Users\User\OneDrive\KodCodeCourse\OOP\AdvancedExercises\bin\Debug\AdvancedExercises.exe
+C:\Users\User\OneDrive\KodCodeCourse\OOP\AdvancedExercises\bin\Debug\AdvancedExercises.pdb
+C:\Users\User\OneDrive\KodCodeCourse\OOP\AdvancedExercises\obj\Debug\AdvancedExercises.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\KodCodeCourse\OOP\AdvancedExercises\obj\Debug\AdvancedExercises.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\KodCodeCourse\OOP\AdvancedExercises\obj\Debug\AdvancedExercises.exe
+C:\Users\User\OneDrive\KodCodeCourse\OOP\AdvancedExercises\obj\Debug\AdvancedExercises.pdb
