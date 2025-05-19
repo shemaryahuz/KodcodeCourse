@@ -15,7 +15,7 @@ namespace ToolBox
         }
         public override void Use()
         {
-            Console.WriteLine("Hammer is Knocking!");
+            Console.WriteLine("The Hammer is Knocking!");
         }
     }
 }
