@@ -9,6 +9,11 @@ namespace ToolBox
     internal class ToolBox
     {
         private List<Tool> Tools = new List<Tool>();
+
+        public List<Tool> GetTools()
+        {
+            return this.Tools;
+        }
         public void AddTool(Tool tool)
         {
             this.Tools.Add(tool);

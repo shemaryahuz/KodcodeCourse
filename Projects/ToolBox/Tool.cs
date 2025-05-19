@@ -11,10 +11,12 @@ namespace ToolBox
     {
         protected string Name;
         protected double Weight;
+        protected int UseCount;
         public Tool(string name, double weight)
         {
             this.Name = name;
             this.Weight = weight;
+            this.UseCount = 5;
         }
         public string GetName()
         {
@@ -30,7 +32,15 @@ namespace ToolBox
         }
         public virtual void Use()
         {
-            Console.WriteLine("Tool is being used.");
+            if (UseCount < 0)
+            {
+                Console.WriteLine("Tool is being used.");
+                this.UseCount--;
+            }
+            else
+            {
+                Console.WriteLine("Can't use!");
+            }
         }
     }
 }

@@ -15,7 +15,15 @@ namespace ToolBox
         }
         public override void Use()
         {
-            Console.WriteLine("The Hammer is Knocking!");
+            if (UseCount < 0)
+            {
+                Console.WriteLine("The Hammer is Knocking!");
+                this.UseCount--;
+            }
+            else
+            {
+                Console.WriteLine("Can't use!");
+            }
         }
     }
 }

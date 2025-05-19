@@ -52,6 +52,7 @@
     <Compile Include="Screwdriver.cs" />
     <Compile Include="Tool.cs" />
     <Compile Include="ToolBox.cs" />
+    <Compile Include="ToolCategory.cs" />
     <Compile Include="Wrench.cs" />
   </ItemGroup>
   <ItemGroup>

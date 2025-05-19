@@ -15,7 +15,15 @@ namespace ToolBox
         }
         public override void Use()
         {
-            Console.WriteLine("The Saw is sawing!");
+            if (UseCount < 0)
+            {
+                Console.WriteLine("The Saw is sawing!");
+                this.UseCount--;
+            }
+            else
+            {
+                Console.WriteLine("Can't use!");
+            }
         }
     }
 }

@@ -15,7 +15,15 @@ namespace ToolBox
         }
         public override void Use()
         {
-            Console.WriteLine("The Screwdriver is screwed!");
+            if (UseCount < 0)
+            {
+                Console.WriteLine("The Screwdriver is screwed!");
+                this.UseCount--;
+            }
+            else
+            {
+                Console.WriteLine("Can't use!");
+            }
         }
     }
 }
