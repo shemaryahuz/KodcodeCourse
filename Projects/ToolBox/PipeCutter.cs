@@ -15,7 +15,15 @@ namespace ToolBox
         }
         public override void Use()
         {
-            Console.WriteLine("The PipeCutter is opening the clog!");
+            if (UseCount < 0)
+            {
+                Console.WriteLine("The PipeCutter is opening the clog!");
+                this.UseCount--;
+            }
+            else
+            {
+                Console.WriteLine("Can't use!");
+            }
         }
     }
 }

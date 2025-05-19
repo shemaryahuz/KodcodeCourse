@@ -16,6 +16,15 @@ namespace ToolBox
         public override void Use()
         {
             Console.WriteLine("The Drill is drilling into the wall!");
+            if (UseCount < 0)
+            {
+                Console.WriteLine("Tool is being used.");
+                this.UseCount--;
+            }
+            else
+            {
+                Console.WriteLine("Can't use!");
+            }
         }
     }
 }
