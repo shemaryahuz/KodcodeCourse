@@ -43,7 +43,7 @@ namespace BeginnerExercises
             // Example for Exercise 9:
             Laptop laptop = new Laptop("HP");
             laptop.Start();
-            // Example for exercise 10:
+            // Example for Exercise 10:
             Point point = new Point(23, 12);
             point.Move(25, 15);
         }

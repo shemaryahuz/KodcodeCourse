@@ -20,5 +20,9 @@ namespace OOP
             this._Tank = tank;
             this.Organization += ": ArmoredForce";
         }
+        public new void Call()
+        {
+            Console.WriteLine("Tanks!!!");
+        }
     }
 }

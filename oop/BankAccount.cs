@@ -2,25 +2,25 @@
 
 public class BankAccount
 {
-    Person person;
-    double balanc;
+    private Person _Person;
+    private double _Balanc;
     
     public BankAccount(Person person, double balanc)
     {
-        this.person = person;
-        this.balanc = balanc;
+        this._Person = person;
+        this._Balanc = balanc;
     }
     public void ShowBalanc()
     {
-        Console.WriteLine($"Hi {this.person.name}!\n" +
-            $"Your balanc is {this.balanc}");
+        Console.WriteLine($"Hi {this._Person.GetName()}!\n" +
+            $"Your balanc is {this._Balanc}");
     }
     public void AddMoney(double amount)
     {
-        this.balanc += amount;
+        this._Balanc += amount;
     }
     public void SubMoney(double amount)
     {
-        this.balanc -= amount;
+        this._Balanc -= amount;
     }
 }

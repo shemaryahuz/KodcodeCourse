@@ -6,7 +6,7 @@ public class Enemy
     public int Rank;
     public string Organization;
     public string Speech;
-    
+
 
     public Enemy(string name, int rank, string organization)
     {
@@ -19,4 +19,8 @@ public class Enemy
     {
         Console.WriteLine($"Hi {this.Name}. You are from {this.Organization} Organizatiom. Your Rank is {this.Rank}.");
     }
-}
+
+    public void Speak(ListeningDevice device, string speech)
+    {
+        device.Listen(speech);
+    }

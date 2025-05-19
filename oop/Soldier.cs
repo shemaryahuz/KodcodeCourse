@@ -26,5 +26,9 @@ namespace OOP
         {
             Console.WriteLine($"You are serving in the {this.Organization}");
         }
+        public virtual void Call()
+        {
+            Console.WriteLine("IDF!!!");
+        }
     }
 }

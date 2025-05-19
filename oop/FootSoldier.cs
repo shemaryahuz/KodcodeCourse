@@ -17,5 +17,9 @@ namespace OOP
             this._Rifle = rifle;
             this.Organization += ": FootForce";
         }
+        public override void Call()
+        {
+            Console.WriteLine("Foot Soldiers!!!");
+        }
     }
 }

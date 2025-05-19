@@ -37,6 +37,22 @@ namespace IntermediateExercises
             // Example for Exercise 15:
             Person person = new Person("Moshe", 15);
             Console.WriteLine(person.Title());
+
+            // Example for Exercise 16:
+            ShopingCart cart = new ShopingCart();
+            cart.AddItem("Computer", 1000);
+            cart.RemoveItem("Table", 200);
+            cart.RemoveItem("Computer", 1000);
+            cart.AddItem("Phone", 47.99);
+            Console.WriteLine($"${cart.GetTotalCost()}");
+            cart.ShowCart();
+
+            // Example for Exercise 17:
+            Robot robot = new Robot();
+            for (int i = 0; i < 10; i++)
+            {
+                robot.Move();
+            }
         }
     }
 }
