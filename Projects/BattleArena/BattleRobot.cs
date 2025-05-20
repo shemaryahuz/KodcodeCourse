@@ -9,11 +9,11 @@ namespace BattleArena
     internal class BattleRobot: IPowerable
     {
         bool IsOn { get; set; }
-        void TornOn()
+        void TurnOn()
         {
             this.IsOn = true;
         }
-        void TornOff()
+        void TurnOff()
         {
             this.IsOn = false;
         }
