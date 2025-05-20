@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B9FD932C-5F53-4DB2-B293-3E10EFF05DE4}</ProjectGuid>
+    <ProjectGuid>{7679A5CE-B1BB-46D2-A2EF-2F40570240C1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>oop</RootNamespace>
-    <AssemblyName>oop</AssemblyName>
+    <RootNamespace>BattleArena</RootNamespace>
+    <AssemblyName>BattleArena</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,16 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
-    <Compile Include="ArmoredSoldier.cs" />
-    <Compile Include="BankAccount.cs" />
-    <Compile Include="Fish.cs" />
-    <Compile Include="FootSoldier.cs" />
-    <Compile Include="Lion.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="BattleRobot.cs" />
+    <Compile Include="IAttackable.cs" />
+    <Compile Include="IMovable.cs" />
+    <Compile Include="IPowerable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Soldier.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
