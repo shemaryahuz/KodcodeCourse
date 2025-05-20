@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animal.cs" />
     <Compile Include="ArmoredSoldier.cs" />
     <Compile Include="BankAccount.cs" />
     <Compile Include="FootSoldier.cs" />
+    <Compile Include="Lion.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
