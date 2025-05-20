@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleRobot.cs" />
+    <Compile Include="IAttackable.cs" />
+    <Compile Include="IMovable.cs" />
     <Compile Include="IPowerable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

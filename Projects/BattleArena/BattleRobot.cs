@@ -8,10 +8,10 @@ namespace BattleArena
 {
     internal class BattleRobot: IPowerable
     {
-        bool IsOn { get; set; }
-        void TurnOn()
+        bool IPowerable.IsOn { get; set; }
+        void IPowerable.TurnOn()
         {
-            this.IsOn = true;
+            = true;
         }
         void TurnOff()
         {
