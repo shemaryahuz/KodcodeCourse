@@ -10,25 +10,33 @@ namespace BattleArena
     {
         public bool IsOn { get; set; }
         public int Health { get; set; }
-        void IPowerable.TurnOn()
+        public void TurnOn()
         {
             this.IsOn = true;
         }
-        void IPowerable.TurnOff()
+        public void TurnOff()
         {
             this.IsOn = false;
         }
-        void IMovable.MoveTo(string location)
+        public void MoveTo(string location)
         {
-            Console.WriteLine($"Robbot is movinge to {location}.");
+            if (this.IsOn)
+            {
+                Console.WriteLine($"Robbot is movinge to {location}.");
+            }
+            else
+            {
+                Console.WriteLine($"Robbot is off, Can't move.");
+            }
+            
         }
-        void IAttackable.Heal(int amount)
+        public void Heal(int amount)
         {
-            throw new NotImplementedException();
+            this.Health += amount;
         }
-        void IAttackable.TakeDamage(int amount)
+        public void TakeDamage(int amount)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Robbot is Taking Danage - {amount}.");
         }
     }
 }
