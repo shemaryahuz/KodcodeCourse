@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleArena
 {
-    internal class BattleRobot: IPowerable, IMovable, IAttackable, IHealer
+    internal class FlyingDrone: IPowerable, IMovable, IAttackable
     {
         public bool IsOn { get; set; }
         public int Health { get; set; }
@@ -22,22 +22,17 @@ namespace BattleArena
         {
             if (this.IsOn)
             {
-                Console.WriteLine($"Robbot is movinge to {location}.");
+                Console.WriteLine($"Drone is flying to {location}.");
             }
             else
             {
-                Console.WriteLine($"Robbot is off, Can't move.");
+                Console.WriteLine($"Drone is off, Can't move.");
             }
-            
-        }
-        public void Heal(int amount)
-        {
-            Console.WriteLine($"Robot is Healing - {amount}");
-            this.Health -= amount;
+
         }
         public void TakeDamage(int amount)
         {
-            Console.WriteLine($"Robbot is Taking Damage - {amount}.");
+            Console.WriteLine($"Drone is Taking Damage - {amount}");
             this.Health -= amount;
         }
     }
