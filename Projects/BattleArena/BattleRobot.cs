@@ -36,7 +36,8 @@ namespace BattleArena
         }
         public void TakeDamage(int amount)
         {
-            Console.WriteLine($"Robbot is Taking Danage - {amount}.");
+            Console.WriteLine($"Robbot is Taking Damage - {amount}.");
+            this.Health -= amount;
         }
     }
 }
