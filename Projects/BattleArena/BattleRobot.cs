@@ -32,6 +32,7 @@ namespace BattleArena
         }
         public void Heal(int amount)
         {
+            Console.WriteLine($"Robot is Healing - {amount}");
             this.Health -= amount;
         }
         public void TakeDamage(int amount)
