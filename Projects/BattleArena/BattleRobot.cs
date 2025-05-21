@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleArena
 {
-    internal class BattleRobot: IPowerable, IMovable, IAttackable
+    internal class BattleRobot: IPowerable, IMovable, IAttackable, IHealer
     {
         public bool IsOn { get; set; }
         public int Health { get; set; }
@@ -32,7 +32,7 @@ namespace BattleArena
         }
         public void Heal(int amount)
         {
-            this.Health += amount;
+            this.Health -= amount;
         }
         public void TakeDamage(int amount)
         {
