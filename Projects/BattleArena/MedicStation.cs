@@ -11,7 +11,7 @@ namespace BattleArena
         public int Health { get; set; }
         public void Heal(int amount)
         {
-            Console.WriteLine($"Megic Station is Healing - {amount}");
+            Console.WriteLine($"Medic Station is Healing - {amount}");
             this.Health -= amount;
         }
     }
