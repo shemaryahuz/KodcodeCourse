@@ -44,9 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleRobot.cs" />
+    <Compile Include="FlyingDrone.cs" />
+    <Compile Include="GroundTrap.cs" />
     <Compile Include="IAttackable.cs" />
+    <Compile Include="IController.cs" />
+    <Compile Include="IHealer.cs" />
     <Compile Include="IMovable.cs" />
     <Compile Include="IPowerable.cs" />
+    <Compile Include="MedicStation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
