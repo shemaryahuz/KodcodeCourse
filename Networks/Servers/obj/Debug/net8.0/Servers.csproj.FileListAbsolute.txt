@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\bin\Debug\net8.0\Servers.exe
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\bin\Debug\net8.0\Servers.deps.json
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\bin\Debug\net8.0\Servers.runtimeconfig.json
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\bin\Debug\net8.0\Servers.dll
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\bin\Debug\net8.0\Servers.pdb
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\obj\Debug\net8.0\Servers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\obj\Debug\net8.0\Servers.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\obj\Debug\net8.0\Servers.AssemblyInfo.cs
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\obj\Debug\net8.0\Servers.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\obj\Debug\net8.0\Servers.sourcelink.json
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\obj\Debug\net8.0\Servers.dll
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\obj\Debug\net8.0\refint\Servers.dll
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\obj\Debug\net8.0\Servers.pdb
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\obj\Debug\net8.0\Servers.genruntimeconfig.cache
+C:\Users\User\source\repos\KodcodeCourse\Servers\Servers\obj\Debug\net8.0\ref\Servers.dll
