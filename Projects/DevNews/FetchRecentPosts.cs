@@ -9,9 +9,8 @@ namespace DevNews
 {
     internal static class FetchRecentPosts
     {
-        public static async Task<HttpResponseMessage> FetchAllPosts()
+        public static async Task<HttpResponseMessage> FetchAllPosts(HttpClient client)
         {
-            HttpClient client = new HttpClient();
             string apiUrl = "https://jsonplaceholder.typicode.com/posts";
             HttpResponseMessage postsResponse = await client.GetAsync(apiUrl);
             return postsResponse;
