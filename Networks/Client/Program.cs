@@ -19,10 +19,12 @@ namespace Client
             string url = "https://api.thecatapi.com/v1/images/search";
             var response = await client.GetAsync(url);
             //
-            Console.WriteLine($"Response: {response}");
+            // Console.WriteLine($"Response: {response}");
             string answer = await response.Content.ReadAsStringAsync();
             Console.WriteLine($"String Answar: {answer}");
-            var json = JsonSerializer.Deserialize<CatData>(answer);
+            Console.WriteLine(answer[0]);
+            var catArr = JsonSerializer.Deserialize<CatData[]>(answer);
+            Console.WriteLine(catArr[0].url);
 
         }
     }
