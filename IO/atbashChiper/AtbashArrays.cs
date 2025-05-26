@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace IO
 {
-    internal class atbashArrays
+    internal class AtbashArrays
     {
         public char[] alphabetaz = new char[26];
         public char[] alphabetza = new char[26];
         public char[] alphabetAZ = new char[26];
         public char[] alphabetZA = new char[26];
-        public atbashArrays()
+        public AtbashArrays()
         {
             for (int i = 0; i < 26; i++)
             {

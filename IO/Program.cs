@@ -5,6 +5,7 @@ namespace IO
     {
         static void Main(string[] args)
         {
+            AtbashArrays atbashArrays = new AtbashArrays();
             bool toExit = false;
             while (!toExit)
             {
@@ -16,14 +17,14 @@ namespace IO
                     Console.WriteLine("Invalid input!");
                     continue;
                 }
-                else if (choice == "4")
+                else if (choice == "3")
                 {
                     toExit = true;
                     continue;
                 }
                 else
                 {
-                    MenuManager.ActivateChoice(choice);
+                    MenuManager.ActivateChoice(choice, atbashArrays);
                 }
             }
             

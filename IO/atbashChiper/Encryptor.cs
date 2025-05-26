@@ -8,32 +8,22 @@ namespace IO
 {
     internal static class Encryptor
     {
-        public static string Encrypt(string message)
+        public static string Encrypt(string message, AtbashArrays atbashArrays)
         {
             string encrypted = "";
-            char[] alphabetaz = new char[26];
-            char[] alphabetza = new char[26];
-            char[] alphabetAZ = new char[26];
-            char[] alphabetZA = new char[26];
-            for (int i = 0; i < 26; i++)
-            {
-                alphabetaz[i] = (char)('a' + i);
-                alphabetza[i] = (char)('z' - i);
-                alphabetAZ[i] = (char)('A' + i);
-                alphabetZA[i] = (char)('Z' - i);
-            }
+
             int chrIndex;
             foreach (char chr in message)
             {
                 if (char.IsUpper(chr))
                 {
-                    chrIndex = Array.IndexOf(alphabetAZ, chr);
-                    encrypted += alphabetZA[chrIndex];
+                    chrIndex = Array.IndexOf(atbashArrays.alphabetAZ, chr);
+                    encrypted += atbashArrays.alphabetZA[chrIndex];
                 }
                 else if (char.IsLower(chr))
                 {
-                    chrIndex = Array.IndexOf(alphabetaz, chr);
-                    encrypted += alphabetza[chrIndex];
+                    chrIndex = Array.IndexOf(atbashArrays.alphabetaz, chr);
+                    encrypted += atbashArrays.alphabetza[chrIndex];
                 }
                 else
                 {
