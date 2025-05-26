@@ -12,11 +12,9 @@ namespace IO
         {
             Console.WriteLine(
                 "ATBASH CHIPER MENU\n" +
-                "1. Write a message for encryption.\n" +
-                "2. Save the encrypted message in a file.\n" +
-                "3. Read the encrypted message from the file.\n" +
-                "4. Decrypt and show the message.\n" +
-                "5. Exit."
+                "1. Write a message for encryption and Save the encrypted message in a file.\n" +
+                "2. Decrypt and show the message.\n" +
+                "3. Exit."
                 );
         }
         public static string GetChoice()
@@ -25,19 +23,31 @@ namespace IO
         }
         public static bool Validate(string choic)
         {
-            string[] validCoices = { "1", "2", "3", "4", "5"};
+            string[] validCoices = { "1", "2", "3"};
             return validCoices.Contains(choic);
         }
         public static string GetMessage()
         {
+            Console.WriteLine("Enter message for encryption:");
             return Console.ReadLine();
         }
-        public static ActivateChoice(string choice)
+        public static void ActivateChoice(string choice, AtbashArrays atbashArrays)
         {
             switch (choice)
             {
                 case "1":
-                    MenuManager.GetMessage();
+
+                    string message = MenuManager.GetMessage();
+                    string encrypted = Encryptor.Encrypt(message, atbashArrays);
+                    FileManager.Save(encrypted);
+                    Console.WriteLine($"Your message: '{message}' was encryepted to '{encrypted}' and saved in a file.");
+                    break;
+                case "2":
+                    string readed = FileManager.Read();
+                    string decrypted = Decryptor.Decrypt(readed, atbashArrays);
+                    Console.WriteLine($"The encrypted message '{readed}' decrypted to '{decrypted}'");
+                    break;
+
 
             }
         }
