@@ -11,17 +11,17 @@ namespace Commandos
         public string Name;
         public string Manufactor;
         public int Bullets;
-        public Weapon(string name, string manufactor)
+        public Weapon(string name, string manufactor, int bullets)
         {
             this.Name = name;
             this.Manufactor = manufactor;
-            this.Bullets = 10;
+            this.Bullets = bullets;
         }
         public void Shoot()
         {
             if (this.Bullets > 0)
             {
-                Console.WriteLine($"{this.Name} is shooting.");
+                Console.WriteLine($"{this.Name} from {this.Manufactor} is shooting.");
                 this.Bullets--;
             }
             else
