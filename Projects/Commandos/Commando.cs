@@ -29,7 +29,7 @@ namespace Commandos
             Console.WriteLine($"Commando {this._Name} is Hiding.");
             this.Status = "Hiding";
         }
-        public void Attack()
+        public virtual void Attack()
         {
             Console.WriteLine($"Commando Code Name {this.CodeName} is Attacking.");
         }

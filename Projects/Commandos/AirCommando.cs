@@ -13,5 +13,9 @@ namespace Commandos
         {
             Console.WriteLine($"{this._Name} is Falling");
         }
+        public override void Attack()
+        {
+            Console.WriteLine($"AirCommando Code Name {this.CodeName} is Attacking.");
+        }
     }
 }

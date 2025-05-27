@@ -13,5 +13,9 @@ namespace Commandos
         {
             Console.WriteLine($"{this._Name} is Swiming");
         }
+        public override void Attack()
+        {
+            Console.WriteLine($"SeaCommando Code Name {this.CodeName} is Attacking.");
+        }
     }
 }
