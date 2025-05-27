@@ -8,7 +8,7 @@ namespace Commandos
 {
     internal class Commando
     {
-        private string _Name;
+        protected string _Name;
         public string CodeName { get; set; }
         public string[] Tools;
         public string Status;

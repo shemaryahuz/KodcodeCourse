@@ -18,7 +18,7 @@ namespace Commandos
 
 
             //// Commando testing
-            Commando commando = new("Avi", "A!x");
+            //Commando commando = new("Avi", "A!x");
             //Console.WriteLine($"{commando.Name}'s Tools:");
             //foreach (string tool in commando.Tools)
             //{
@@ -32,18 +32,10 @@ namespace Commandos
             //commando.Attack();
 
             // Commando testing (private properties)
-            Console.WriteLine(commando.SayName("General"));
-            Console.WriteLine(commando.SayName("Colonel"));
-            Console.WriteLine(commando.SayName("Turay"));
-            Console.WriteLine(commando.CodeName);
-
-
-
-
-
-
-
-
+            //Console.WriteLine(commando.SayName("General"));
+            //Console.WriteLine(commando.SayName("Colonel"));
+            //Console.WriteLine(commando.SayName("Turay"));
+            //Console.WriteLine(commando.CodeName);
 
             //// Weapon testing
             //Weapon rifle = new("Rifle", "Uzi", 10);
@@ -52,6 +44,14 @@ namespace Commandos
             //{
             //    rifle.Shoot();
             //}
+
+            // Commandos inheritance
+            AirCommando air = new("David", "D34");
+            air.Attack();
+            air.Fall();
+            SeaCommando sea = new("Ben", "B@7");
+            sea.Attack();
+            sea.Swim();
         }
     }
 }
