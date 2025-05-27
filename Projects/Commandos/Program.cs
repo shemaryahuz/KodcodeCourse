@@ -1,4 +1,5 @@
-﻿using Commandos.Lesson;
+﻿
+
 
 namespace Commandos
 {
@@ -6,17 +7,9 @@ namespace Commandos
     {
         static void Main(string[] args)
         {
-            // Polymorphism
-            Commando[] commandos =
-            {
-                new Commando("David", "345"),
-                new AirCommando("Moshe", "987"),
-                new SeaCommando("Avi", "907")
-            };
-            foreach (Commando commando in commandos)
-            {
-                commando.Attack();
-            }
+            // Enemy class
+            Enemy enemy = new("Muhammad");
+            enemy.Shout();
         }
     }
 }
