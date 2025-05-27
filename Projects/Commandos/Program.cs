@@ -1,4 +1,4 @@
-﻿using Commandos.EncapsulationLesson;
+﻿using Commandos.Lesson;
 
 namespace Commandos
 {
@@ -9,6 +9,11 @@ namespace Commandos
             //// Encapsulation lesson
             //Animal animal = new Animal("Jony", 10, "Brown");
             //animal.MakeSound();
+
+            // Abstraction lesson
+            Animal animal = new Animal("Jony", 10, "Brown");
+            animal.MakeSound();
+
 
             //// Commando testing
             //Commando commando = new("Avi", "A!x");
