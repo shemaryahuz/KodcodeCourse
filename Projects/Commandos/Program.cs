@@ -7,9 +7,14 @@ namespace Commandos
     {
         static void Main(string[] args)
         {
-            // Enemy class
-            Enemy enemy = new("Muhammad");
-            enemy.Shout();
+            EnemyFactory.GetInstance().AddEnemy("Ali");
+            EnemyFactory.GetInstance().AddEnemy("Achmad");
+            EnemyFactory.GetInstance().AddEnemy("Jhon");
+            EnemyFactory.GetInstance().AddEnemy("Bob");
+            foreach (Enemy enemy in EnemyFactory.GetInstance().Enemies)
+            {
+                Console.WriteLine(enemy.Name);
+            }
         }
     }
 }
