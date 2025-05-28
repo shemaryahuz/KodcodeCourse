@@ -14,34 +14,34 @@ namespace Commandos
         public string Status;
         public Commando(string name, string codeName)
         {
-            this._Name = name;
-            this.CodeName = codeName;
-            this.Tools = new string[] { "Hammar", "Chisel", "Rope", "bag", "Water" };
-            this.Status = "Standing";
+            _Name = name;
+            CodeName = codeName;
+            Tools = new string[] { "Hammar", "Chisel", "Rope", "bag", "Water" };
+            Status = "Standing";
         }
         public void Walk()
         {
-            Console.WriteLine($"Commando {this._Name} is Walking.");
-            this.Status = "Walking";
+            Console.WriteLine($"Commando {_Name} is Walking.");
+            Status = "Walking";
         }
         public void Hide()
         {
-            Console.WriteLine($"Commando {this._Name} is Hiding.");
-            this.Status = "Hiding";
+            Console.WriteLine($"Commando {_Name} is Hiding.");
+            Status = "Hiding";
         }
         public virtual void Attack()
         {
-            Console.WriteLine($"Commando Code Name {this.CodeName} is Attacking.");
+            Console.WriteLine($"Commando Code Name {CodeName} is Attacking.");
         }
         public string SayName(string commanderRank = "Turay")
         {
             if (commanderRank == "General")
             {
-                return this._Name;
+                return _Name;
             }
             else if (commanderRank == "Colonel")
             {
-                return this.CodeName;
+                return CodeName;
             }
             return "Classified information";
         }
