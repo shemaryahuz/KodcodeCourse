@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GeminiAPI": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "GEMINI_API_KEY": "AIzaSyCP5RWgV_SkeD5s6evvpXGzVm7ohlMFzDI"
+      }
+    }
+  }
+}
