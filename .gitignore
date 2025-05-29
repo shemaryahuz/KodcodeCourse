@@ -1,1 +1,133 @@
+## Ignore Visual Studio temporary files, build results, and user-specific files
+
+# Build results
+**/[Bb]in/
+**/[Oo]bj/
+**/[Ll]og/
+*.log
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.sdf
+*.cache
+*.dbmdl
+*.VC.db
+
+# Ignore all launchSettings.json in any project folder
+**/Properties/launchSettings.json
+
+# VS Code
+.vscode/
+**/.vscode/
+
+# ASP.NET Scaffolding
+**/ScaffoldingReadMe.txt
+
+# Other Visual Studio files
+*.ncb
+*.aps
+*.ilk
+*.meta
+*.pdb
+*.ipch
+*.iobj
+*.iopt
+*.sbr
+*.tlh
+*.tli
+*.tmp
+*.log
+*.vspscc
+*.vssscc
+*.v11.suo
+*.bak
+*.backup
+*.swp
+*.scc
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# DotCover
+*.dotCover
+
+# NCrunch
+*.ncrunch*
+.*crunch*.local.xml
+**/NCrunchBin/
+
+# ReSharper
+**/_ReSharper*/
+*.DotSettings.user
+
+# Rider
+**/.idea/
+*.sln.iml
+
+# Test results & coverage
+**/TestResults/
+*.coverage
+*.coveragexml
+*.testresults
+*.trx
+
+# Publish and deployment
+*.publish.xml
+*.pubxml
+*.publishproj
+**/PublishProfiles/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/packages/
+*.nuspec
+*.psmdcp
+project.lock.json
+project.fragment.lock.json
+**/artifacts/
+
+# NuGet package restore
+*.nuget.props
+*.nuget.targets
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Windows installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Backup & temp
+*.bak
+*.tmp
+*.old
+
+# Local history
+**/.localhistory/
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Entity Framework Migrations (optional)
+**/Migrations/
+
+# .NET CLI
+project.assets.json
+project.lock.json
+global.json
+
+# Visual Studio generated folders
 .vs/
+**/.vs/
