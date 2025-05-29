@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\bin\Debug\net8.0\GeminiAPI.exe
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\bin\Debug\net8.0\GeminiAPI.deps.json
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\bin\Debug\net8.0\GeminiAPI.runtimeconfig.json
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\bin\Debug\net8.0\GeminiAPI.dll
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\bin\Debug\net8.0\GeminiAPI.pdb
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\obj\Debug\net8.0\GeminiAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\obj\Debug\net8.0\GeminiAPI.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\obj\Debug\net8.0\GeminiAPI.AssemblyInfo.cs
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\obj\Debug\net8.0\GeminiAPI.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\obj\Debug\net8.0\GeminiAPI.sourcelink.json
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\obj\Debug\net8.0\GeminiAPI.dll
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\obj\Debug\net8.0\refint\GeminiAPI.dll
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\obj\Debug\net8.0\GeminiAPI.pdb
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\obj\Debug\net8.0\GeminiAPI.genruntimeconfig.cache
+C:\Users\User\source\repos\KodcodeCourse\Networks\GeminiAPI\obj\Debug\net8.0\ref\GeminiAPI.dll
