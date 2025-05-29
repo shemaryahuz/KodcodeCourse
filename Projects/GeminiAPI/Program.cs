@@ -20,25 +20,41 @@ namespace GeminiAPI
             }
             string modelToUse = "gemini-2.0-flash";
             var geminiService = new GeminiService(apiKey, modelToUse);
-            Console.WriteLine("Enter your prompt:");
-            string prompt = Console.ReadLine();
-            Console.WriteLine($"Sending prompt to Gemini (model: {modelToUse}): \"{prompt}\"");
-            Console.WriteLine("Waiting for response...");
-            string generatedText = await geminiService.GenerateTextAsync(prompt);
-            if (generatedText != null)
+            Console.WriteLine($"--- Gemini AI Chat (Model: {modelToUse}) ---");
+            Console.WriteLine("Type 'exit' or 'quit' to end the session.");
+            string userInput;
+            while (true)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\nGemini's Response:");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("\nYou: ");
                 Console.ResetColor();
-                Console.WriteLine(generatedText);
+                userInput = Console.ReadLine();
+                if (string.IsNullOrEmpty(userInput))
+                {
+                    continue;
+                }
+                if (userInput.Equals("exit",StringComparison.OrdinalIgnoreCase) || userInput.Equals("quit", StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("Exiting chat. Goodbye!");
+                    break;
+                }
+                Console.WriteLine("Gemini is thinking...");
+                string generatedText = await geminiService.GenerateTextAsync(userInput);
+                if (generatedText != null)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Gemini: ");
+                    Console.ResetColor();
+                    Console.WriteLine(generatedText);
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Gemini: Failed to get a response or an error occurred.");
+                    Console.ResetColor();
+                }
             }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("\nFailed to get a response from Gemini.");
-                Console.ResetColor();
-            }
-            Console.WriteLine("\nPress any key to exit.");
+            Console.WriteLine("\nSession ended. Press any key to close the application.");
             Console.ReadKey();
         }
     }
