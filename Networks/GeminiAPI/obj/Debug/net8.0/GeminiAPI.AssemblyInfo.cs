@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GeminiAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8060498915d006ad527e5870b283838e8968a9e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e2ee1d0d3858e0afed66239440f3669c2fec3bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("GeminiAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GeminiAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
