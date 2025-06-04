@@ -25,3 +25,12 @@ WHERE quantityInStock < 200;
 SELECT *
 FROM offices
 WHERE country='USA';
+
+-- ORDER BY
+SELECT *
+FROM customers
+ORDER BY contactFirstName;
+
+SELECT *
+FROM orders
+ORDER BY orderDate;
