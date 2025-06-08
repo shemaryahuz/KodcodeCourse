@@ -93,17 +93,19 @@ namespace EagleEye
         public void UpdateLocation(int agentId, string location)
         {
             this._conn.Open();
-            string query = $"INSERT INTO agents (location) VALUES (@location)";
+            string query = $"UPDATE agents (location) VALUES (@location)";
             MySqlCommand command = new MySqlCommand(query, this._conn);
             command.Parameters.AddWithValue("@location", location);
+            command.ExecuteNonQuery();
             this._conn.Close();
         }
         public void UpdateStatus(int agentId, string status)
         {
             this._conn.Open();
-            string query = $"INSERT INTO agents (status) VALUES (@status)";
+            string query = $"UPDATE agents (status) VALUES (@status)";
             MySqlCommand command = new MySqlCommand(query, this._conn);
             command.Parameters.AddWithValue("@status", status);
+            command.ExecuteNonQuery();
             this._conn.Close();
         }
         public void DeleteAgent(int agentId)
