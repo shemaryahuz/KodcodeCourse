@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 
 namespace EagleEye
 {
@@ -91,20 +92,24 @@ namespace EagleEye
         }
         public void UpdateLocation(int agentId, string location)
         {
-            string query = $"SELECT * FROM agents WHERE id LIKE '{agentId}'";
+            this._conn.Open();
+            string query = $"INSERT INTO agents (location) VALUES (@location)";
             MySqlCommand command = new MySqlCommand(query, this._conn);
-            
+            command.Parameters.AddWithValue("@location", location);
+            this._conn.Close();
         }
         public void UpdateStatus(int agentId, string status)
         {
-            string query = $"SELECT * FROM agents WHERE id LIKE '{agentId}'";
+            this._conn.Open();
+            string query = $"INSERT INTO agents (status) VALUES (@status)";
             MySqlCommand command = new MySqlCommand(query, this._conn);
-
+            command.Parameters.AddWithValue("@status", status);
+            this._conn.Close();
         }
         public void DeleteAgent(int agentId)
         {
             this._conn.Open();
-            string query = $"SELECT * FROM agents WHERE id LIKE '{agentId}'";
+            string query = $"DELETE FROM agents WHERE id={agentId}";
             MySqlCommand command = new MySqlCommand(query, this._conn);
             command.ExecuteNonQuery();
             this._conn.Close();
