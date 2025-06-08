@@ -45,6 +45,38 @@ namespace EagleEye
                 this._conn.Close();
             }
         }
+        public Agent GetAgent(int agentId)
+        {
+            this._conn.Open();
+            Agent agent;
+            try
+            {
+                string query = $"SELECT * FROM agents WHERE id={agentId}";
+                MySqlCommand command = new MySqlCommand(query, this._conn);
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    agent = new Agent(
+                        reader.GetInt32("id"),
+                        reader.GetString("codeName"),
+                        reader.GetString("realName"),
+                        reader.GetString("location"),
+                        reader.GetString("status"),
+                        reader.GetInt32("missionCompleted")
+                        );
+                    return agent;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
+            finally
+            {
+                this._conn.Close();
+            }
+            return null;
+        }
         public List<Agent> GetAgents()
         {
             this._conn.Open();
@@ -76,6 +108,16 @@ namespace EagleEye
                 this._conn.Close();
             }
             return agents;
+        }
+        public void ShowAgent(Agent agent)
+        {
+            Console.WriteLine(
+                   $"ID: {agent.ID}. " +
+                   $"CodeName: {agent.CodeName}. " +
+                   $"RealName: {agent.RealName}. " +
+                   $"Location: {agent.Location}. " +
+                   $"Status: {agent.Status}. " +
+                   $"MissionCompleted: {(agent.MissionCompleted == 0 ? "Not Completed" : "Completed")}");
         }
         public void ShowAgents(List<Agent> agents)
         {
@@ -115,84 +157,6 @@ namespace EagleEye
             MySqlCommand command = new MySqlCommand(query, this._conn);
             command.ExecuteNonQuery();
             this._conn.Close();
-        }
-        private void ShowMenu()
-        {
-            Console.WriteLine(
-                "--Eagle Eye Database--\n" +
-                "Options:\n" +
-                "1. Add agent.\n" +
-                "2. Show all agents.\n" +
-                "3. Update agent location.\n" +
-                "4. Update agent status.\n" +
-                "5. Delete agent.\n" +
-                "6. Exit.");
-        }
-        private string GetSelection()
-        {
-            Console.WriteLine("Enter your selection:");
-            return Console.ReadLine();
-        }
-        private bool Validate(string selection)
-        {
-            string[] validated = { "1", "2", "3", "4", "5" };
-            return validated.Contains(selection);
-        }
-        private void ExecuteSelection(string selection)
-        {
-            switch (selection)
-            {
-                case "1":
-                    Console.WriteLine("Not possible yet.");
-                    break;
-                case "2":
-                    this.ShowAgents(this.GetAgents());
-                    break;
-                case "3":
-                    Console.WriteLine("Not possible yet.");
-                    break;
-                case "4":
-                    Console.WriteLine("Not possible yet.");
-                    break;
-                case "5":
-                    Console.WriteLine("Not possible yet.");
-                    break;
-            }
-        }
-        public void ManipulateData()
-        {
-            try
-            {
-                this._conn.Open();
-                bool toExit = false;
-                string exit = "6";
-                while (!toExit)
-                {
-                    this.ShowMenu();
-                    string selection = this.GetSelection();
-                    if (selection == exit)
-                    {
-                        toExit = true;
-                        continue;
-                    }
-                    bool validated = this.Validate(selection);
-                    if (!validated)
-                    {
-                        Console.WriteLine("Invalid input.");
-                        continue;
-                    }
-                    this.ExecuteSelection(selection);
-                }   
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Eror: {e.Message}");
-            }
-            finally
-            {
-                this._conn.Close();
-            }
-
         }
     }
 }
