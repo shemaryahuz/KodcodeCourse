@@ -10,13 +10,14 @@ namespace Database
     {
         private string connStr = "server=localhost;username=root;password=;database=classicmodels";
         private MySqlConnection connection;
-        public void GetData(string query)
+        public void GetOrdersData()
         {
             try
             {
                 connection = new MySqlConnection(connStr);
                 connection.Open();
                 Console.WriteLine("Connection to MySql Database 'cllasicmodels' succseeded");
+                string query = "SELECT * FROM orders";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -31,7 +32,6 @@ namespace Database
             }
             finally
             {
-                connection.Close();
                 connection.Close();
             }
         }
