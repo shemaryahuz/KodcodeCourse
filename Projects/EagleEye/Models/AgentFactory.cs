@@ -22,11 +22,11 @@ namespace EagleEye
             this._statuses = new string[] {"Active", "Injured", "Missing", "Retired", "Active" };
             this._missionCompleted = new int[] { 1, 0, 0, 1, 0};
             this.Agents = new List<Agent>();
-            for (int i = 0; i < 5; i++)
+            for (int i = 30; i < 35; i++)
             {
                 Agent agent = new Agent(
                     i,
-                    this._codeNames[i],
+                    $"eagle{i}",
                     this._realNames[i],
                     this._locations[i],
                     this._statuses[i],

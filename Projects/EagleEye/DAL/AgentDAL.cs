@@ -12,10 +12,19 @@ namespace EagleEye
     {
         private string _connectionStr;
         private MySqlConnection _connection;
-        public AgentDAL(string connectionStr = "server=localhost;username=root;password=;database=eagle_eye_db")
+        private static AgentDAL _instance;
+        private AgentDAL(string connectionStr = "server=localhost;username=root;password=;database=eagle_eye_db")
         {
             this._connectionStr = connectionStr;
             this._connection = new MySqlConnection(this._connectionStr);
+        }
+        public static AgentDAL GetDAL()
+        {
+            if (_instance is null)
+            {
+                _instance = new AgentDAL();
+            }
+            return _instance;
         }
         public void OpenConnection()
         {
@@ -53,13 +62,15 @@ namespace EagleEye
         }
         public Agent GetAgent(int agentId)
         {
-            Agent agent;
+            Agent agent = null;
             try
             {
                 string query = $"SELECT * FROM agents WHERE id={agentId}";
                 MySqlCommand command = new MySqlCommand(query, this._connection);
                 MySqlDataReader reader = command.ExecuteReader();
-                agent = new Agent(
+                if (reader.Read())
+                {
+                    agent = new Agent(
                     reader.GetInt32("id"),
                     reader.GetString("codeName"),
                     reader.GetString("realName"),
@@ -67,7 +78,7 @@ namespace EagleEye
                     reader.GetString("status"),
                     reader.GetInt32("missionCompleted")
                     );
-                return agent;
+                }  
             }
             catch(MySqlException ex)
             {
@@ -77,7 +88,7 @@ namespace EagleEye
             {
                 Console.WriteLine($"Error: {ex.Message}");
             }
-            return null;
+            return agent;
         }
         public List<Agent> GetAgents()
         {

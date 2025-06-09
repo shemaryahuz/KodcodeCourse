@@ -9,13 +9,18 @@ namespace EagleEye
 {
     internal class MenuManager
     {
-
-        public MenuManager()
+        private AgentDAL _dal = AgentDAL.GetDAL();
+        private static MenuManager _instance;
+        private MenuManager() { }
+        public static MenuManager GetMenuManager()
         {
-            this._connectionStr = "server=localhost;username=root;password=;database=eagle_eye_db";
-            this._connection = new MySqlConnection(this._connectionStr);
+            if (_instance is null)
+            {
+                _instance = new MenuManager();
+            }
+            return _instance;
         }
-        private void ShowAgent(Agent agent)
+        public void ShowAgent(Agent agent)
         {
             Console.WriteLine(
                    $"ID: {agent.ID}. " +
@@ -68,7 +73,7 @@ namespace EagleEye
                     Console.WriteLine("Not possible yet.");
                     break;
                 case "2":
-                    this.ShowAgents(AgentDAL.GetAgents());
+                    this.ShowAgents(this._dal.GetAgents());
                     break;
                 case "3":
                     Console.WriteLine("Not possible yet.");
@@ -83,38 +88,25 @@ namespace EagleEye
         }
         public void ManipulateData()
         {
-            try
+            bool toExit = false;
+            string exit = "6";
+            while (!toExit)
             {
-                this._conn.Open();
-                bool toExit = false;
-                string exit = "6";
-                while (!toExit)
+                this.ShowMenu();
+                string selection = this.GetSelection();
+                if (selection == exit)
                 {
-                    this.ShowMenu();
-                    string selection = this.GetSelection();
-                    if (selection == exit)
-                    {
-                        toExit = true;
-                        continue;
-                    }
-                    bool validated = this.Validate(selection);
-                    if (!validated)
-                    {
-                        Console.WriteLine("Invalid input.");
-                        continue;
-                    }
-                    this.ExecuteSelection(selection);
+                    toExit = true;
+                    continue;
                 }
+                bool validated = this.Validate(selection);
+                if (!validated)
+                {
+                    Console.WriteLine("Invalid input.");
+                    continue;
+                }
+                this.ExecuteSelection(selection);
             }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Eror: {e.Message}");
-            }
-            finally
-            {
-                this._conn.Close();
-            }
-
         }
     }
 }
