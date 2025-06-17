@@ -1,7 +1,0 @@
-C:\Users\User\source\repos\KodcodeCourse\Projects\BattleArena\bin\Release\BattleArena.exe.config
-C:\Users\User\source\repos\KodcodeCourse\Projects\BattleArena\bin\Release\BattleArena.exe
-C:\Users\User\source\repos\KodcodeCourse\Projects\BattleArena\bin\Release\BattleArena.pdb
-C:\Users\User\source\repos\KodcodeCourse\Projects\BattleArena\obj\Release\BattleArena.csproj.AssemblyReference.cache
-C:\Users\User\source\repos\KodcodeCourse\Projects\BattleArena\obj\Release\BattleArena.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\KodcodeCourse\Projects\BattleArena\obj\Release\BattleArena.exe
-C:\Users\User\source\repos\KodcodeCourse\Projects\BattleArena\obj\Release\BattleArena.pdb
