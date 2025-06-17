@@ -1,8 +1,0 @@
-C:\Users\User\OneDrive\KodCodeCourse\OOP\EnemyListening\bin\Debug\EnemeyListening.exe.config
-C:\Users\User\OneDrive\KodCodeCourse\OOP\EnemyListening\bin\Debug\EnemeyListening.exe
-C:\Users\User\OneDrive\KodCodeCourse\OOP\EnemyListening\bin\Debug\EnemeyListening.pdb
-C:\Users\User\OneDrive\KodCodeCourse\OOP\EnemyListening\obj\Debug\EnemyListening.csproj.AssemblyReference.cache
-C:\Users\User\OneDrive\KodCodeCourse\OOP\EnemyListening\obj\Debug\EnemyListening.csproj.CoreCompileInputs.cache
-C:\Users\User\OneDrive\KodCodeCourse\OOP\EnemyListening\obj\Debug\EnemeyListening.exe
-C:\Users\User\OneDrive\KodCodeCourse\OOP\EnemyListening\obj\Debug\EnemeyListening.pdb
-C:\Users\User\OneDrive\KodCodeCourse\OOP\EnemyListening\obj\Debug\EnemeyListening.exe.config

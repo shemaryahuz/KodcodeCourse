@@ -1,2 +1,0 @@
-C:\Users\User\OneDrive\KodCodeCourse\OOP\EnemyListening\obj\Debug\EnemeyListening.csproj.AssemblyReference.cache
-C:\Users\User\OneDrive\KodCodeCourse\OOP\EnemyListening\obj\Debug\EnemeyListening.csproj.CoreCompileInputs.cache
