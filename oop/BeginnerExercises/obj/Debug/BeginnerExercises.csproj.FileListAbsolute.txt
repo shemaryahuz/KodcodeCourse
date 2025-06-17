@@ -1,7 +1,0 @@
-C:\Users\User\OneDrive\KodCodeCourse\OOP\BeginnerExercises\bin\Debug\BeginnerExercises.exe.config
-C:\Users\User\OneDrive\KodCodeCourse\OOP\BeginnerExercises\bin\Debug\BeginnerExercises.exe
-C:\Users\User\OneDrive\KodCodeCourse\OOP\BeginnerExercises\bin\Debug\BeginnerExercises.pdb
-C:\Users\User\OneDrive\KodCodeCourse\OOP\BeginnerExercises\obj\Debug\BeginnerExercises.csproj.AssemblyReference.cache
-C:\Users\User\OneDrive\KodCodeCourse\OOP\BeginnerExercises\obj\Debug\BeginnerExercises.csproj.CoreCompileInputs.cache
-C:\Users\User\OneDrive\KodCodeCourse\OOP\BeginnerExercises\obj\Debug\BeginnerExercises.exe
-C:\Users\User\OneDrive\KodCodeCourse\OOP\BeginnerExercises\obj\Debug\BeginnerExercises.pdb
