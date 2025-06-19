@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SOLID.DIP.Exercise1
+namespace SOLID.DIP.Exercise2
 {
-    internal class MissionController
+    internal static class Exe2
     {
+        public static void Run()
+        {
+
+        }
     }
 }
