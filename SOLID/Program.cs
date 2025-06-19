@@ -1,4 +1,5 @@
 ﻿using SOLID.LSP.Exercise1;
+using SOLID.LSP.Exercise2;
 
 namespace SOLID
 {
@@ -6,10 +7,13 @@ namespace SOLID
     {
         static void Main(string[] args)
         {
-            // Exercise 1
+            // Test for LSP.Exercise1
             PlayBirds play = new PlayBirds();
             play.BirdsEat();
             play.BirdsFly();
+            // Test for LSP.Exercise2
+            ShapesCalculator calculator = new ShapesCalculator();
+            calculator.ShowCalculations();
         }
     }
 }
