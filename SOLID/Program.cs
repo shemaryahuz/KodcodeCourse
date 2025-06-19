@@ -1,4 +1,5 @@
-﻿using SOLID.LSP.Exercise1;
+﻿using SOLID.DIP.Exercise1;
+using SOLID.LSP.Exercise1;
 using SOLID.LSP.Exercise2;
 
 namespace SOLID
@@ -14,6 +15,9 @@ namespace SOLID
             // Test for LSP.Exercise2
             ShapesCalculator calculator = new ShapesCalculator();
             calculator.ShowCalculations();
+
+            // Test for DIP.Exercise1
+            Exe1.Run();
         }
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SOLID.DIP.Exercise1
+namespace SOLID.DIP.Exercise1.Interfaces
 {
-    internal class MissionController
+    internal interface ILogger
     {
+        void Log();
     }
 }
